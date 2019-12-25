@@ -24,6 +24,6 @@ jobs:
       - name: lint
         run: yarn lint
       - name: build
-        run: yarn build
+        run: yarn build:ci
       - name: test
         run: yarn test:prod
