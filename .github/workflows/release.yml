@@ -1,0 +1,61 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    if: "! contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+      - run: echo "${{ github.event.head_commit.message }}"
+
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org
+
+      - name: Yarn install
+        run: npm install -g yarn # Extra Step
+
+      - name: install
+        run: yarn
+
+      - name: lint
+        run: yarn lint
+
+      - name: test
+        run: yarn test:prod
+
+      - name: build
+        run: yarn build
+
+      - name: Upload Coverage
+        run: yarn report-coverage
+
+      - name: Deploy Doc
+        run: yarn deploy-docs
+
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: dist
+          path: dist
+
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v1
+        with:
+          name: code-coverage-report
+          path: output/test/code-coverage.html
+
+      - run: yarn semantic-release
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
