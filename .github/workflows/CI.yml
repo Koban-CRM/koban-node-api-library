@@ -33,10 +33,6 @@ jobs:
       - name: test
         run: yarn test:prod
 
-      - name: Code Coverage
-        run: yarn report-coverage
-
-      - name: Coveralls
-        uses: coverallsapp/github-action@v1.0.1
+      - uses: codecov/codecov-action@v1
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.CODECOV_TOKEN }} #required
