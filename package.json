@@ -1,0 +1,151 @@
+{
+  "name": "@koban-crm/api-library",
+  "version": "0.0.0-development",
+  "description": "API SDK for Koban CRM",
+  "keywords": [
+    "koban",
+    "koban crm",
+    "crm",
+    "node",
+    "js",
+    "javascript",
+    "typescript",
+    "ts",
+    "api",
+    "sdk"
+  ],
+  "main": "dist/koban-api-library.umd.js",
+  "module": "dist/koban-api-library.es5.js",
+  "typings": "dist/types/koban-api-library.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": "Ulysse Mensa <ulysse@koban-crm.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Koban-CRM/koban-node-api-library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Koban-CRM/koban-node-api-library/issues"
+  },
+  "homepage": "https://github.com/Koban-CRM/koban-node-api-library#readme",
+  "license": "GPL-3.0-or-later",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "prebuild": "rimraf dist",
+    "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
+    "build:ci": "tsc --module commonjs && rollup -c rollup.config.ts",
+    "docs": "typedoc --out docs --target es6 --theme minimal --mode file src",
+    "start": "rollup -c rollup.config.ts -w",
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watch",
+    "test:prod": "npm run test -- --no-cache",
+    "deploy-docs": "ts-node tools/gh-pages-publish",
+    "report-coverage": "shx cat ./coverage/lcov.info | coveralls",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release",
+    "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
+    "precommit": "lint-staged",
+    "travis-deploy-once": "travis-deploy-once",
+    "prepush": "npm run test:prod && npm run build",
+    "commitmsg": "commitlint -E HUSKY_GIT_PARAMS"
+  },
+  "lint-staged": {
+    "{src,test}/**/*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testEnvironment": "node",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/",
+      "/mocks/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 40,
+        "functions": 45,
+        "lines": 45,
+        "statements": 45
+      }
+    },
+    "collectCoverageFrom": [
+      "src/**/*.{js,ts}",
+      "!src/**/index.{js,ts}"
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@rollup/plugin-json": "^4.0.0",
+    "@rollup/plugin-node-resolve": "^6.0.0",
+    "@rollup/plugin-typescript": "^2.0.0",
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.14",
+    "colors": "^1.4.0",
+    "commitizen": "^4.0.3",
+    "coveralls": "^3.0.9",
+    "cross-env": "^6.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "jest-config": "^24.9.0",
+    "lint-staged": "^9.5.0",
+    "lodash.camelcase": "^4.3.0",
+    "postman-jsdoc-theme": "^0.0.3",
+    "prettier": "^1.19.1",
+    "prompt": "^1.0.0",
+    "replace-in-file": "^4.2.0",
+    "rimraf": "^3.0.0",
+    "rollup": "^1.27.8",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "semantic-release": "^15.14.0",
+    "shelljs": "^0.8.3",
+    "shx": "^0.3.2",
+    "travis-deploy-once": "^5.0.11",
+    "ts-jest": "^24.2.0",
+    "ts-node": "^8.5.4",
+    "tslib": "^1.10.0",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^9.0.0",
+    "typedoc": "^0.15.3",
+    "typescript": "^3.7.3"
+  },
+  "peerDependencies": {},
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
+}
