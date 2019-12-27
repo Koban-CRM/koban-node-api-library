@@ -4,14 +4,27 @@
 // import { KobanSDK } from './sdk';
 // export default KobanSDK;
 export { KobanSDK } from './sdk'
-export { BaseService, IConfigService, InvoiceService, PaymentService } from './services'
 export {
+  BaseService,
+  IConfigService,
+  InvoiceService,
+  PaymentService,
+  ProductService,
+  ProductCategoryService,
+  OrderService,
+  ListService,
+  ThirdService
+} from './services'
+export {
+  KobanNullable,
   IKobanAPIResponse,
   IKobanAddress,
   IKobanBaseModel,
   IKobanContact,
   IKobanDeal,
   IKobanDeposit,
+  IKobanEShopOrder,
+  IKobanEShopTrackingOrder,
   IKobanFieldValue,
   IKobanGeo,
   IKobanIban,
@@ -28,6 +41,7 @@ export {
   IKobanShipping,
   IKobanTag,
   IKobanThird,
+  IKobanTracking,
   IKobanUser,
   KobanAddress,
   KobanAPIResponse,
@@ -35,27 +49,42 @@ export {
   KobanContact,
   KobanDeal,
   KobanDeposit,
+  KobanEShopOrder,
+  KobanEShopTrackingOrder,
   KobanFieldValue,
   KobanGeo,
   KobanIban,
   KobanInvoice,
-  KobanInvoiceStatus,
-  KobanInvoiceUniquePropertyPayment,
   KobanLine,
   KobanLineQuote,
   KobanListValue,
   KobanOrder,
-  KobanOrderUniquePropertyInvoice,
   KobanPayment,
   KobanProduct,
   KobanProductCategory,
   KobanProductDeclinaison,
   KobanQuote,
+  KobanResultList,
   KobanShipping,
   KobanTag,
   KobanThird,
-  KobanThirdUniquePropertyInvoice,
-  KobanUniquePropertyInvoice,
-  KobanUniquePropertyPayment,
+  KobanTracking,
   KobanUser
+} from './models'
+export {
+  KobanDealUniqueProperty,
+  KobanInvoiceStatus,
+  KobanInvoiceUniqueProperty,
+  KobanOrderUniqueProperty,
+  KobanPaymentUniqueProperty,
+  KobanProductCategoryUniqueProperty,
+  KobanProductUniqueProperty,
+  KobanThirdUniqueProperty
+} from './models'
+export {
+  IOrderGetByDate,
+  IOrderGetUpdated,
+  IThirdGetUpdated,
+  IThirdGetStatus,
+  IProductCategoryGetUpdated
 } from './models'

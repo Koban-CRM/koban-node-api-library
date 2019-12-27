@@ -1,7 +1,7 @@
 import { KobanBaseModel, IKobanBaseModel } from './baseModel'
 import { IKobanInvoice, KobanInvoice } from './invoice'
 import { IKobanListValue, KobanListValue } from './listValue'
-import { KobanNullable } from './interfaces'
+import { KobanNullable } from './types'
 
 /**
  *

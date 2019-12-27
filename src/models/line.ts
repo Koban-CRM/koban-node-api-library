@@ -1,5 +1,5 @@
 import { IKobanProduct, KobanProduct } from './product'
-import { KobanNullable } from './interfaces'
+import { KobanNullable } from './types'
 
 /**
  *

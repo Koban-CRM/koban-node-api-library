@@ -5,7 +5,7 @@ import { IKobanContact, KobanContact } from './contact'
 import { IKobanOrder, KobanOrder } from './order'
 import { IKobanListValue, KobanListValue } from './listValue'
 import { IKobanLine, KobanLine } from './line'
-import { KobanNullable } from './interfaces'
+import { KobanNullable } from './types'
 
 /**
  *

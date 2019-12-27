@@ -1,9 +1,9 @@
 import axios from 'axios'
 import {
   KobanAPIResponse,
-  KobanInvoiceUniquePropertyPayment,
+  KobanInvoiceUniqueProperty,
   KobanPayment,
-  KobanUniquePropertyPayment
+  KobanPaymentUniqueProperty
 } from '../models'
 import { BaseService, IConfigService } from './base.service'
 
@@ -29,19 +29,17 @@ class PaymentService extends BaseService {
    *
    * @param {KobanPayment[]} payments Liste des paiements
    * Limite à 100 objects
-   * @param {KobanUniquePropertyPayment} uniqueproperty Propriété sélectionnée pour vérifier si le paiement doit être créé ou modifié.
-   * Peut prendre la valeur : Extcode.
+   * @param {KobanPaymentUniqueProperty} uniqueproperty Propriété sélectionnée pour vérifier si le paiement doit être créé ou modifié.
    * L'API vérifie qu'un paiement correspondant à cette clé existe.
    * Si il existe, il effectue une modification, sinon il effectue une création
-   * @param {KobanInvoiceUniquePropertyPayment} invoiceuniqueproperty Propriété sélectionnée pour sélectionner la facture correspondant au paiement.
-   * Peut prendre la valeur : Number
+   * @param {KobanInvoiceUniqueProperty} invoiceuniqueproperty Propriété sélectionnée pour sélectionner la facture correspondant au paiement.
    * @returns {Promise<string[]>}
    * @memberof PaymentService
    */
   public async createOrUpdateMany(
     payments: KobanPayment[],
-    uniqueproperty: KobanUniquePropertyPayment,
-    invoiceuniqueproperty: KobanInvoiceUniquePropertyPayment
+    uniqueproperty: KobanPaymentUniqueProperty,
+    invoiceuniqueproperty: KobanInvoiceUniqueProperty
   ): Promise<string[]> {
     return new Promise<string[]>(async (resolve, reject) => {
       try {

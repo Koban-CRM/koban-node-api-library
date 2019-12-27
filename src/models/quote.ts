@@ -1,7 +1,7 @@
 import { KobanBaseModel, IKobanBaseModel } from './baseModel'
 import { IKobanDeal, KobanDeal } from './deal'
 import { IKobanLineQuote, KobanLineQuote } from './lineQuote'
-import { KobanNullable } from './interfaces'
+import { KobanNullable } from './types'
 
 /**
  *

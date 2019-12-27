@@ -1,5 +1,5 @@
 import { IKobanBaseModel, KobanBaseModel } from './baseModel'
-import { KobanNullable } from './interfaces'
+import { KobanNullable } from './types'
 
 /**
  *

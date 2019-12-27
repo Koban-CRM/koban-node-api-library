@@ -4,7 +4,7 @@ import { IKobanUser, KobanUser } from './user'
 import { IKobanListValue, KobanListValue } from './listValue'
 import { IKobanThird, KobanThird } from './third'
 import { IKobanTag, KobanTag } from './tag'
-import { KobanNullable } from './interfaces'
+import { KobanNullable } from './types'
 
 /**
  *

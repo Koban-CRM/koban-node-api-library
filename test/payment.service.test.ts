@@ -1,8 +1,8 @@
 import {
   KobanSDK,
   KobanPayment,
-  KobanUniquePropertyPayment,
-  KobanInvoiceUniquePropertyPayment
+  KobanPaymentUniqueProperty,
+  KobanInvoiceUniqueProperty
 } from '../src/koban-api-library'
 import axios from 'axios'
 
@@ -44,8 +44,8 @@ describe('Payment Service', () => {
     await expect(
       kobanSDK.paymentService.createOrUpdateMany(
         payments,
-        KobanUniquePropertyPayment.Extcode,
-        KobanInvoiceUniquePropertyPayment.Number
+        KobanPaymentUniqueProperty.Extcode,
+        KobanInvoiceUniqueProperty.Number
       )
     ).rejects.toThrow(
       new Error(
@@ -67,8 +67,8 @@ describe('Payment Service', () => {
     // work
     const result = await kobanSDK.paymentService.createOrUpdateMany(
       [new KobanPayment()],
-      KobanUniquePropertyPayment.Extcode,
-      KobanInvoiceUniquePropertyPayment.Number
+      KobanPaymentUniqueProperty.Extcode,
+      KobanInvoiceUniqueProperty.Number
     )
 
     // expect
@@ -100,8 +100,8 @@ describe('Payment Service', () => {
     await expect(
       kobanSDK.paymentService.createOrUpdateMany(
         [new KobanPayment()],
-        KobanUniquePropertyPayment.Extcode,
-        KobanInvoiceUniquePropertyPayment.Number
+        KobanPaymentUniqueProperty.Extcode,
+        KobanInvoiceUniqueProperty.Number
       )
     ).rejects.toThrow(new Error(resp.data.Errors.join('\n')))
   })

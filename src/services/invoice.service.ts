@@ -2,9 +2,9 @@ import axios from 'axios'
 import {
   KobanAPIResponse,
   KobanInvoice,
-  KobanOrderUniquePropertyInvoice,
-  KobanThirdUniquePropertyInvoice,
-  KobanUniquePropertyInvoice
+  KobanInvoiceUniqueProperty,
+  KobanOrderUniqueProperty,
+  KobanThirdUniqueProperty
 } from '../models'
 import { BaseService, IConfigService } from './base.service'
 
@@ -30,28 +30,19 @@ class InvoiceService extends BaseService {
    *
    * @param {KobanInvoice[]} invoices Liste des factures
    * Limite à 100 objects
-   * @param {KobanUniquePropertyInvoice} uniqueproperty Propriété sélectionnée pour vérifier si le bon de commande doit être créé ou modifié.
-   * Peut prendre la valeur : Number.
+   * @param {KobanInvoiceUniqueProperty} uniqueproperty Propriété sélectionnée pour vérifier si le bon de commande doit être créé ou modifié.
    * L'API vérifie qu'un bon de commande correspondant à cette clé existe.
    * Si il existe, il effectue une modification, sinon il effectue une création
-   * @param {KobanOrderUniquePropertyInvoice} orderuniqueproperty Propriété définissant la clé de bon de commande associé à la facture.
-   * Peut prendre la valeur : Number.
-   * @param {KobanThirdUniquePropertyInvoice} thirduniqueproperty Propriété définissant la clé du compte associé à la facture.
-   * Peut prendre la valeur :
-   * - Email (Email),
-   * - Guid (Identifiant),
-   * - Extcode (Code externe),
-   * - NameAddress (Nom et code postal),
-   * - AccountingCode (Compte comptable),
-   * - ExtcodeThenEmail (Code externe et si il n'existe pas EMail).
+   * @param {KobanOrderUniqueProperty} orderuniqueproperty Propriété définissant la clé de bon de commande associé à la facture.
+   * @param {KobanThirdUniqueProperty} thirduniqueproperty Propriété définissant la clé du compte associé à la facture.
    * @returns {(Promise<string[]>)} String array contenant les Guid des objects créé ou modifié
    * @memberof InvoiceService
    */
   public async createOrUpdateMany(
     invoices: KobanInvoice[],
-    uniqueproperty: KobanUniquePropertyInvoice,
-    orderuniqueproperty: KobanOrderUniquePropertyInvoice,
-    thirduniqueproperty: KobanThirdUniquePropertyInvoice
+    uniqueproperty: KobanInvoiceUniqueProperty,
+    orderuniqueproperty: KobanOrderUniqueProperty,
+    thirduniqueproperty: KobanThirdUniqueProperty
   ): Promise<string[]> {
     return new Promise<string[]>(async (resolve, reject) => {
       try {

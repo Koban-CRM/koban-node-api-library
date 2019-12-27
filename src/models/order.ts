@@ -7,7 +7,7 @@ import { IKobanDeal, KobanDeal } from './deal'
 import { IKobanLine, KobanLine } from './line'
 import { IKobanDeposit, KobanDeposit } from './deposit'
 import { IKobanListValue, KobanListValue } from './listValue'
-import { KobanNullable } from './interfaces'
+import { KobanNullable } from './types'
 
 /**
  *

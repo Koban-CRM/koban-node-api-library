@@ -1,4 +1,12 @@
-import { InvoiceService, PaymentService } from './services'
+import {
+  InvoiceService,
+  PaymentService,
+  OrderService,
+  ListService,
+  ThirdService,
+  ProductCategoryService,
+  ProductService
+} from './services'
 
 /**
  *
@@ -91,6 +99,46 @@ class KobanSDK implements IConfig {
   public paymentService: PaymentService
 
   /**
+   * Order Service
+   *
+   * @type {OrderService}
+   * @memberof KobanSDK
+   */
+  public orderService: OrderService
+
+  /**
+   * List Service
+   *
+   * @type {ListService}
+   * @memberof KobanSDK
+   */
+  public listService: ListService
+
+  /**
+   * Third Service
+   *
+   * @type {ThirdService}
+   * @memberof KobanSDK
+   */
+  public thirdService: ThirdService
+
+  /**
+   * Product Category Service
+   *
+   * @type {ProductCategoryService}
+   * @memberof KobanSDK
+   */
+  public productCategoryService: ProductCategoryService
+
+  /**
+   * Product Service
+   *
+   * @type {ProductService}
+   * @memberof KobanSDK
+   */
+  public productService: ProductService
+
+  /**
    * Creates an instance of KobanSDK.
    *
    * @param {!IConfig} config
@@ -106,6 +154,31 @@ class KobanSDK implements IConfig {
       user: this.user
     })
     this.paymentService = new PaymentService({
+      baseUrl: this.buildBaseUrl(),
+      key: this.token,
+      user: this.user
+    })
+    this.orderService = new OrderService({
+      baseUrl: this.buildBaseUrl(),
+      key: this.token,
+      user: this.user
+    })
+    this.listService = new ListService({
+      baseUrl: this.buildBaseUrl(),
+      key: this.token,
+      user: this.user
+    })
+    this.thirdService = new ThirdService({
+      baseUrl: this.buildBaseUrl(),
+      key: this.token,
+      user: this.user
+    })
+    this.productCategoryService = new ProductCategoryService({
+      baseUrl: this.buildBaseUrl(),
+      key: this.token,
+      user: this.user
+    })
+    this.productService = new ProductService({
       baseUrl: this.buildBaseUrl(),
       key: this.token,
       user: this.user

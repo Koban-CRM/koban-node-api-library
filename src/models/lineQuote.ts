@@ -1,5 +1,5 @@
 import { IKobanLine, KobanLine } from './line'
-import { KobanNullable } from './interfaces'
+import { KobanNullable } from './types'
 
 /**
  *

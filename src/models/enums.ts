@@ -17,31 +17,55 @@ enum KobanInvoiceStatus {
 }
 
 /**
- * Propriété sélectionnée pour vérifier si le bon de commande doit être créé ou modifié
+ * Propriété définissant la clé de la facture associé
  *
  * @enum {number}
  */
-enum KobanUniquePropertyInvoice {
+enum KobanInvoiceUniqueProperty {
   /** Numéro */
   Number = 'Number'
 }
 
 /**
- * Propriété définissant la clé de bon de commande associé à la facture
+ * Propriété définissant la clé de bon de commande associé
  *
  * @enum {number}
  */
-enum KobanOrderUniquePropertyInvoice {
+enum KobanOrderUniqueProperty {
   /** Numéro */
-  Number = 'Number'
+  Number = 'Number',
+  /** Code externe */
+  Extcode = 'Extcode'
 }
 
 /**
- * Propriété définissant la clé du compte associé à la facture
+ * Propriété définissant la clé du paiement associé
  *
  * @enum {number}
  */
-enum KobanThirdUniquePropertyInvoice {
+enum KobanPaymentUniqueProperty {
+  /** Code externe */
+  Extcode = 'Extcode'
+}
+
+/**
+ * Propriété définissant la clé de l'opportunité associée
+ *
+ * @enum {number}
+ */
+enum KobanDealUniqueProperty {
+  /** Identifiant Koban */
+  Guid = 'Guid',
+  /** Code externe */
+  Extcode = 'Extcode'
+}
+
+/**
+ * Propriété définissant la clé du compte associé
+ *
+ * @enum {number}
+ */
+enum KobanThirdUniqueProperty {
   /** Email */
   Email = 'Email',
   /** Identifiant */
@@ -57,30 +81,32 @@ enum KobanThirdUniquePropertyInvoice {
 }
 
 /**
- * Propriété sélectionnée pour vérifier si le paiement doit être créé ou modifié
+ *
  *
  * @enum {number}
  */
-enum KobanUniquePropertyPayment {
-  /** Code externe */
-  Extcode = 'Extcode'
+enum KobanProductCategoryUniqueProperty {
+  /** Reference */
+  Reference = 'Reference'
 }
 
 /**
- * Propriété sélectionnée pour sélectionner la facture correspondant au paiement.
+ *
  *
  * @enum {number}
  */
-enum KobanInvoiceUniquePropertyPayment {
-  /** Numéro */
-  Number = 'Number'
+enum KobanProductUniqueProperty {
+  /** Reference */
+  Reference = 'Reference'
 }
 
 export {
+  KobanDealUniqueProperty,
   KobanInvoiceStatus,
-  KobanInvoiceUniquePropertyPayment,
-  KobanOrderUniquePropertyInvoice,
-  KobanThirdUniquePropertyInvoice,
-  KobanUniquePropertyInvoice,
-  KobanUniquePropertyPayment
+  KobanInvoiceUniqueProperty,
+  KobanOrderUniqueProperty,
+  KobanPaymentUniqueProperty,
+  KobanProductCategoryUniqueProperty,
+  KobanProductUniqueProperty,
+  KobanThirdUniqueProperty
 }

@@ -21,9 +21,6 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org
 
-      - name: Yarn install
-        run: npm install -g yarn # Extra Step
-
       - name: install
         run: yarn
 
@@ -36,8 +33,10 @@ jobs:
       - name: build
         run: yarn build
 
-      - name: Upload Coverage
-        run: yarn report-coverage
+      - name: Coveralls GitHub Action
+        uses: coverallsapp/github-action@v1.0.1
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
 
       - name: Deploy Doc
         run: yarn deploy-docs

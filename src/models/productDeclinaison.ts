@@ -1,4 +1,4 @@
-import { KobanNullable } from './interfaces'
+import { KobanNullable } from './types'
 
 /**
  *

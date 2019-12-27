@@ -1,9 +1,9 @@
 import {
   KobanSDK,
   KobanInvoice,
-  KobanUniquePropertyInvoice,
-  KobanOrderUniquePropertyInvoice,
-  KobanThirdUniquePropertyInvoice
+  KobanInvoiceUniqueProperty,
+  KobanOrderUniqueProperty,
+  KobanThirdUniqueProperty
 } from '../src/koban-api-library'
 import axios from 'axios'
 
@@ -709,9 +709,9 @@ describe('Invoice Service', () => {
     await expect(
       kobanSDK.invoiceService.createOrUpdateMany(
         invoices,
-        KobanUniquePropertyInvoice.Number,
-        KobanOrderUniquePropertyInvoice.Number,
-        KobanThirdUniquePropertyInvoice.Email
+        KobanInvoiceUniqueProperty.Number,
+        KobanOrderUniqueProperty.Number,
+        KobanThirdUniqueProperty.Email
       )
     ).rejects.toThrow(
       new Error(
@@ -733,9 +733,9 @@ describe('Invoice Service', () => {
     // work
     const result = await kobanSDK.invoiceService.createOrUpdateMany(
       [new KobanInvoice()],
-      KobanUniquePropertyInvoice.Number,
-      KobanOrderUniquePropertyInvoice.Number,
-      KobanThirdUniquePropertyInvoice.Email
+      KobanInvoiceUniqueProperty.Number,
+      KobanOrderUniqueProperty.Number,
+      KobanThirdUniqueProperty.Email
     )
 
     // expect
@@ -767,9 +767,9 @@ describe('Invoice Service', () => {
     await expect(
       kobanSDK.invoiceService.createOrUpdateMany(
         [new KobanInvoice()],
-        KobanUniquePropertyInvoice.Number,
-        KobanOrderUniquePropertyInvoice.Number,
-        KobanThirdUniquePropertyInvoice.Email
+        KobanInvoiceUniqueProperty.Number,
+        KobanOrderUniqueProperty.Number,
+        KobanThirdUniqueProperty.Email
       )
     ).rejects.toThrow(new Error(resp.data.Errors.join('\n')))
   })

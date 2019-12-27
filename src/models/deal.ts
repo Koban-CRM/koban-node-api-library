@@ -5,7 +5,7 @@ import { IKobanThird, KobanThird } from './third'
 import { IKobanContact, KobanContact } from './contact'
 import { IKobanFieldValue, KobanFieldValue } from './fieldValue'
 import { IKobanTag, KobanTag } from './tag'
-import { KobanNullable } from './interfaces'
+import { KobanNullable } from './types'
 
 /**
  *

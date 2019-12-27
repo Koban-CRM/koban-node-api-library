@@ -1,6 +1,6 @@
 {
-  "name": "@koban/api-library",
-  "version": "0.0.0",
+  "name": "@koban-crm/api-library",
+  "version": "0.0.0-development",
   "description": "API SDK for Koban CRM",
   "keywords": [
     "koban",
@@ -38,6 +38,7 @@
     "prebuild": "rimraf dist",
     "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
     "build:ci": "tsc --module commonjs && rollup -c rollup.config.ts",
+    "docs": "typedoc --out docs --target es6 --theme minimal --mode file src",
     "start": "rollup -c rollup.config.ts -w",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
@@ -48,7 +49,9 @@
     "semantic-release": "semantic-release",
     "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
     "precommit": "lint-staged",
-    "travis-deploy-once": "travis-deploy-once"
+    "travis-deploy-once": "travis-deploy-once",
+    "prepush": "npm run test:prod && npm run build",
+    "commitmsg": "commitlint -E HUSKY_GIT_PARAMS"
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [
@@ -79,10 +82,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 45,
-        "functions": 50,
-        "lines": 50,
-        "statements": 50
+        "branches": 40,
+        "functions": 45,
+        "lines": 45,
+        "statements": 45
       }
     },
     "collectCoverageFrom": [
@@ -128,7 +131,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-typescript2": "^0.25.3",
-    "semantic-release": "^15.13.31",
+    "semantic-release": "^15.14.0",
     "shelljs": "^0.8.3",
     "travis-deploy-once": "^5.0.11",
     "ts-jest": "^24.2.0",

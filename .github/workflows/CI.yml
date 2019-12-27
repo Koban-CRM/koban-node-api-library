@@ -1,6 +1,6 @@
 name: CI
 
-on: [push]
+on: ["push", "pull_request"]
 
 jobs:
   test:
@@ -15,15 +15,25 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: install
         run: yarn install
+
       - name: lint
         run: yarn lint
+
       - name: build
         run: yarn build:ci
+
       - name: test
         run: yarn test:prod
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@v1.0.1
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}

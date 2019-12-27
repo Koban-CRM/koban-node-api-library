@@ -6,7 +6,7 @@ import { IKobanTag, KobanTag } from './tag'
 import { IKobanFieldValue, KobanFieldValue } from './fieldValue'
 import { IKobanGeo, KobanGeo } from './geo'
 import { IKobanIban, KobanIban } from './iban'
-import { KobanNullable } from './interfaces'
+import { KobanNullable } from './types'
 
 /**
  *

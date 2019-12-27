@@ -2,7 +2,7 @@ import { KobanBaseModel, IKobanBaseModel } from './baseModel'
 import { IKobanProductCategory, KobanProductCategory } from './productCategory'
 import { IKobanFieldValue, KobanFieldValue } from './fieldValue'
 import { IKobanProductDeclinaison, KobanProductDeclinaison } from './productDeclinaison'
-import { KobanNullable } from './interfaces'
+import { KobanNullable } from './types'
 
 /**
  *

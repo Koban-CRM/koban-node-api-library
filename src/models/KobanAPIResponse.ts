@@ -47,4 +47,44 @@ class KobanAPIResponse implements IKobanAPIResponse {
   }
 }
 
-export { KobanAPIResponse }
+// type Constructor<T> = { new (...args: any): T };
+
+/**
+ *
+ *
+ * @class KobanResultList
+ * @template T
+ */
+class KobanResultList<T> {
+  /**
+   *
+   *
+   * @type {number}
+   * @memberof KobanResultList
+   */
+  public Length: number
+  /**
+   *
+   *
+   * @type {T[]}
+   * @memberof KobanResultList
+   */
+  public List: T[]
+
+  /**
+   * Creates an instance of KobanResultList.
+   * @param {*} data
+   * @memberof KobanResultList
+   */
+  constructor(data: any) {
+    const { Length, List } = data
+    this.Length = data.Length
+    let className: new (...args: any) => T
+    // let className: Constructor<T>;
+    this.List = data.List.map((item: T) => {
+      return new className(item)
+    })
+  }
+}
+
+export { KobanAPIResponse, KobanResultList }

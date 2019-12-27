@@ -4,19 +4,29 @@ import { KobanContact, IKobanContact } from './contact'
 import { KobanDeal, IKobanDeal } from './deal'
 import { KobanDeposit, IKobanDeposit } from './deposit'
 import {
+  KobanDealUniqueProperty,
   KobanInvoiceStatus,
-  KobanInvoiceUniquePropertyPayment,
-  KobanOrderUniquePropertyInvoice,
-  KobanThirdUniquePropertyInvoice,
-  KobanUniquePropertyInvoice,
-  KobanUniquePropertyPayment
+  KobanInvoiceUniqueProperty,
+  KobanOrderUniqueProperty,
+  KobanPaymentUniqueProperty,
+  KobanProductCategoryUniqueProperty,
+  KobanProductUniqueProperty,
+  KobanThirdUniqueProperty
 } from './enums'
+import { KobanNullable } from './types'
 import { KobanFieldValue, IKobanFieldValue } from './fieldValue'
 import { KobanGeo, IKobanGeo } from './geo'
 import { KobanIban, IKobanIban } from './iban'
-import { IKobanAPIResponse } from './interfaces'
+import {
+  IKobanAPIResponse,
+  IOrderGetUpdated,
+  IOrderGetByDate,
+  IThirdGetUpdated,
+  IThirdGetStatus,
+  IProductCategoryGetUpdated
+} from './interfaces'
 import { KobanInvoice, IKobanInvoice } from './invoice'
-import { KobanAPIResponse } from './KobanAPIResponse'
+import { KobanAPIResponse, KobanResultList } from './KobanAPIResponse'
 import { KobanLine, IKobanLine } from './line'
 import { KobanLineQuote, IKobanLineQuote } from './lineQuote'
 import { KobanListValue, IKobanListValue } from './listValue'
@@ -30,14 +40,25 @@ import { KobanShipping, IKobanShipping } from './shipping'
 import { KobanTag, IKobanTag } from './tag'
 import { KobanThird, IKobanThird } from './third'
 import { KobanUser, IKobanUser } from './user'
+import {
+  KobanEShopOrder,
+  KobanEShopTrackingOrder,
+  KobanTracking,
+  IKobanEShopOrder,
+  IKobanEShopTrackingOrder,
+  IKobanTracking
+} from './eShop'
 
 export {
+  KobanNullable,
   IKobanAPIResponse,
   IKobanAddress,
   IKobanBaseModel,
   IKobanContact,
   IKobanDeal,
   IKobanDeposit,
+  IKobanEShopOrder,
+  IKobanEShopTrackingOrder,
   IKobanFieldValue,
   IKobanGeo,
   IKobanIban,
@@ -54,34 +75,48 @@ export {
   IKobanShipping,
   IKobanTag,
   IKobanThird,
+  IKobanTracking,
   IKobanUser,
   KobanAddress,
   KobanAPIResponse,
   KobanBaseModel,
   KobanContact,
   KobanDeal,
+  KobanDealUniqueProperty,
   KobanDeposit,
+  KobanEShopOrder,
+  KobanEShopTrackingOrder,
   KobanFieldValue,
   KobanGeo,
   KobanIban,
   KobanInvoice,
   KobanInvoiceStatus,
-  KobanInvoiceUniquePropertyPayment,
+  KobanInvoiceUniqueProperty,
   KobanLine,
   KobanLineQuote,
   KobanListValue,
   KobanOrder,
-  KobanOrderUniquePropertyInvoice,
+  KobanOrderUniqueProperty,
   KobanPayment,
+  KobanPaymentUniqueProperty,
   KobanProduct,
   KobanProductCategory,
+  KobanProductCategoryUniqueProperty,
   KobanProductDeclinaison,
+  KobanProductUniqueProperty,
   KobanQuote,
+  KobanResultList,
   KobanShipping,
   KobanTag,
   KobanThird,
-  KobanThirdUniquePropertyInvoice,
-  KobanUniquePropertyInvoice,
-  KobanUniquePropertyPayment,
+  KobanThirdUniqueProperty,
+  KobanTracking,
   KobanUser
+}
+export {
+  IOrderGetByDate,
+  IOrderGetUpdated,
+  IThirdGetUpdated,
+  IThirdGetStatus,
+  IProductCategoryGetUpdated
 }
