@@ -33,6 +33,7 @@ jobs:
       - name: test
         run: yarn test:prod
 
-      - uses: codecov/codecov-action@v1
+      - name: Code Coverage
+        uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }} #required
