@@ -33,10 +33,13 @@ jobs:
       - name: build
         run: yarn build
 
-      - name: Coveralls GitHub Action
+      - name: Code Coverage
+        run: yarn report-coverage
+
+      - name: Coveralls
         uses: coverallsapp/github-action@v1.0.1
         with:
-          github-token: ${{ secrets.GH_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy Doc
         run: yarn deploy-docs
