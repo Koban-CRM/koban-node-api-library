@@ -5,6 +5,4 @@ API SDK for Koban CRM
 [![Build Status](https://github.com/Koban-CRM/koban-node-api-library/workflows/CI/badge.svg)](https://github.com/Koban-CRM/koban-node-api-library/actions)
 [![Build Status](https://github.com/Koban-CRM/koban-node-api-library/workflows/Release/badge.svg)](https://github.com/Koban-CRM/koban-node-api-library/actions)
 [![codecov](https://codecov.io/gh/Koban-CRM/koban-node-api-library/branch/master/graph/badge.svg)](https://codecov.io/gh/Koban-CRM/koban-node-api-library)
-<!-- ![Coveralls github](https://img.shields.io/coveralls/github/Koban-CRM/koban-node-api-library?style=flat-square)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Koban-CRM/koban-node-api-library/CI?style=flat-square)-->
 [![NPM version](https://img.shields.io/npm/v/@koban-crm/api-library?style=flat-square)](https://www.npmjs.com/package/@koban-crm/api-library)

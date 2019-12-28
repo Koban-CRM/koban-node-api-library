@@ -34,7 +34,7 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "lint": "tslint --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
     "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
     "build:ci": "tsc --module commonjs && rollup -c rollup.config.ts",
@@ -49,6 +49,15 @@
     "precommit": "lint-staged",
     "prepush": "npm run test:prod && npm run build",
     "commitmsg": "commitlint -E HUSKY_GIT_PARAMS"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ],
+    "branch": "master"
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [
@@ -105,6 +114,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
+    "@rollup/plugin-commonjs": "^11.0.0",
     "@rollup/plugin-json": "^4.0.0",
     "@rollup/plugin-node-resolve": "^6.0.0",
     "@rollup/plugin-typescript": "^2.0.0",
@@ -126,7 +136,6 @@
     "replace-in-file": "^4.2.0",
     "rimraf": "^3.0.0",
     "rollup": "^1.27.8",
-    "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
@@ -134,7 +143,6 @@
     "semantic-release": "^15.14.0",
     "shelljs": "^0.8.3",
     "shx": "^0.3.2",
-    "travis-deploy-once": "^5.0.11",
     "ts-jest": "^24.2.0",
     "ts-node": "^8.5.4",
     "tslib": "^1.10.0",
