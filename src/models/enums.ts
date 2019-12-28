@@ -77,7 +77,21 @@ enum KobanThirdUniqueProperty {
   /** Compte comptable */
   AccountingCode = 'AccountingCode',
   /** Code externe et si il n'existe pas EMail */
-  ExtcodeThenEmail = 'ExtcodeThenEmail'
+  ExtcodeThenEmail = 'ExtcodeThenEmail',
+  /** Autre Code */
+  OtherCode = 'OtherCode',
+  /** Identifiant et si il n'existe pas Compte comptable */
+  GuidThenAccountingcode = 'GuidThenAccountingcode',
+  /** Numéro Officiel */
+  OfficialNumber = 'OfficialNumber',
+  /** Code externe et si il n'existe pas EMail du Lead */
+  ExtcodeThenEmailLead = 'ExtcodeThenEmailLead',
+  /** Identifiant et si il n'existe pas EMail */
+  GuidThenExtcode = 'GuidThenExtcode',
+  /** Identifiant et si il n'existe pas Code externe et si il n'existe pas EMail */
+  GuidThenExtcodeThenEMail = 'GuidThenExtcodeThenEMail',
+  /** Autre Code et si il n'existe pas Email et si il n'existe pas Nom et code postal */
+  OtherCodeThenEMailThenNameAddress = 'OtherCodeThenEMailThenNameAddress'
 }
 
 /**
@@ -97,7 +111,11 @@ enum KobanProductCategoryUniqueProperty {
  */
 enum KobanProductUniqueProperty {
   /** Reference */
-  Reference = 'Reference'
+  Reference = 'Reference',
+  /** Identifiant */
+  Guid = 'Guid',
+  /** Autre Code */
+  OtherCode = 'OtherCode'
 }
 
 export {
