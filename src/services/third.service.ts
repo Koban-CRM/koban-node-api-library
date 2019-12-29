@@ -7,7 +7,8 @@ import {
   KobanResultList,
   KobanThird,
   IThirdGetUpdated,
-  IThirdGetStatus
+  IThirdGetStatus,
+  KobanTag
 } from '../models'
 import { BaseService, IConfigService } from './base.service'
 
@@ -348,6 +349,38 @@ class ThirdService extends BaseService {
         })
         const responseData: KobanThird = new KobanThird(request.data)
         resolve(responseData)
+      } catch (error) {
+        reject(error)
+      }
+    })
+  }
+
+  /**
+   * Remove Tags from a Third
+   *
+   * @param {KobanTag} tags Liste des Tag a supprimer
+   * @param {string} id Identifiant du Compte
+   * @returns {Promise<boolean>}
+   * @memberof ThirdService
+   */
+  public async removeTagsFromThird(tags: KobanTag, id: string): Promise<boolean> {
+    return new Promise<boolean>(async (resolve, reject) => {
+      try {
+        const request = await axios.post(`${this.serviceUrl}/RemoveTagsFromThird`, tags, {
+          headers: {
+            Accept: 'application/json',
+            'X-ncApi': this.key,
+            'X-ncUser': this.user
+          },
+          params: {
+            id
+          }
+        })
+        const responseData: KobanAPIResponse = new KobanAPIResponse(request.data)
+        if (!responseData.Success) {
+          throw this.handleApiError(responseData)
+        }
+        resolve(responseData.Result)
       } catch (error) {
         reject(error)
       }
