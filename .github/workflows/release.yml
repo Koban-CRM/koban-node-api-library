@@ -31,22 +31,12 @@ jobs:
         run: yarn test:prod
 
       - name: build
-        run: yarn build
+        run: yarn build:ci
 
       - name: Code Coverage
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }} #required
-
-      - name: Deploy Docs
-        uses: peaceiris/actions-gh-pages@v2
-        env:
-          PERSONAL_TOKEN: ${{ secrets.GH_TOKEN }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: ./docs
-        with:
-          username: "Ulysse Mensa"
-          useremail: "ulysse@koban-crm.com"
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v1
@@ -64,3 +54,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: generate docs
+        run: yarn docs
+
+      - name: Deploy Docs
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GH_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./docs
+        with:
+          username: "Ulysse Mensa"
+          useremail: "ulysse@koban-crm.com"
