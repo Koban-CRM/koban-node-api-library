@@ -50,7 +50,8 @@ jobs:
           name: code-coverage-report
           path: coverage/lcov-report
 
-      - uses: codfish/semantic-release-action@master
+      - name: Release
+        run: yarn semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
