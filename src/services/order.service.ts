@@ -259,7 +259,10 @@ class OrderService extends BaseService {
             to: Math.round(to.getTime() / 1000).toString()
           }
         })
-        const responseData: KobanResultList<KobanOrder> = new KobanResultList(request.data)
+        const responseData: KobanResultList<KobanOrder> = new KobanResultList<KobanOrder>(
+          request.data,
+          KobanOrder
+        )
         resolve(responseData)
       } catch (error) {
         reject(error)
@@ -301,7 +304,10 @@ class OrderService extends BaseService {
             f: fill === true ? '1' : '0'
           }
         })
-        const responseData: KobanResultList<KobanOrder> = new KobanResultList(request.data)
+        const responseData: KobanResultList<KobanOrder> = new KobanResultList<KobanOrder>(
+          request.data,
+          KobanOrder
+        )
         resolve(responseData)
       } catch (error) {
         reject(error)

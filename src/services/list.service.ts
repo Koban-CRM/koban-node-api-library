@@ -69,7 +69,10 @@ class ListService extends BaseService {
             code
           }
         })
-        const responseData: KobanResultList<KobanListValue> = new KobanResultList(request.data)
+        const responseData: KobanResultList<KobanListValue> = new KobanResultList<KobanListValue>(
+          request.data,
+          KobanListValue
+        )
         resolve(responseData)
       } catch (error) {
         reject(error)

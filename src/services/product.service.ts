@@ -44,7 +44,10 @@ class ProductService extends BaseService {
             search
           }
         })
-        const responseData: KobanResultList<KobanProduct> = new KobanResultList(request.data)
+        const responseData: KobanResultList<KobanProduct> = new KobanResultList<KobanProduct>(
+          request.data,
+          KobanProduct
+        )
         resolve(responseData)
       } catch (error) {
         reject(error)
@@ -72,7 +75,10 @@ class ProductService extends BaseService {
             search
           }
         })
-        const responseData: KobanResultList<KobanProduct> = new KobanResultList(request.data)
+        const responseData: KobanResultList<KobanProduct> = new KobanResultList<KobanProduct>(
+          request.data,
+          KobanProduct
+        )
         resolve(responseData)
       } catch (error) {
         reject(error)
@@ -111,7 +117,10 @@ class ProductService extends BaseService {
             s: start
           }
         })
-        const responseData: KobanResultList<KobanProduct> = new KobanResultList(request.data)
+        const responseData: KobanResultList<KobanProduct> = new KobanResultList<KobanProduct>(
+          request.data,
+          KobanProduct
+        )
         resolve(responseData)
       } catch (error) {
         reject(error)

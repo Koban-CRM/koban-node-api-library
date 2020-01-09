@@ -137,9 +137,9 @@ class ProductCategoryService extends BaseService {
             s: start
           }
         })
-        const responseData: KobanResultList<KobanProductCategory> = new KobanResultList(
-          request.data
-        )
+        const responseData: KobanResultList<KobanProductCategory> = new KobanResultList<
+          KobanProductCategory
+        >(request.data, KobanProductCategory)
         resolve(responseData)
       } catch (error) {
         reject(error)
