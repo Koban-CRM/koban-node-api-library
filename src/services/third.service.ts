@@ -176,7 +176,10 @@ class ThirdService extends BaseService {
             structcode
           }
         })
-        const responseData: KobanResultList<KobanThird> = new KobanResultList(request.data)
+        const responseData: KobanResultList<KobanThird> = new KobanResultList<KobanThird>(
+          request.data,
+          KobanThird
+        )
         resolve(responseData)
       } catch (error) {
         reject(error)
@@ -218,7 +221,10 @@ class ThirdService extends BaseService {
             structcode
           }
         })
-        const responseData: KobanResultList<KobanThird> = new KobanResultList(request.data)
+        const responseData: KobanResultList<KobanThird> = new KobanResultList<KobanThird>(
+          request.data,
+          KobanThird
+        )
         resolve(responseData)
       } catch (error) {
         reject(error)
@@ -246,7 +252,10 @@ class ThirdService extends BaseService {
             search
           }
         })
-        const responseData: KobanResultList<KobanThird> = new KobanResultList(request.data)
+        const responseData: KobanResultList<KobanThird> = new KobanResultList<KobanThird>(
+          request.data,
+          KobanThird
+        )
         resolve(responseData)
       } catch (error) {
         reject(error)
@@ -291,7 +300,10 @@ class ThirdService extends BaseService {
             status
           }
         })
-        const responseData: KobanResultList<KobanThird> = new KobanResultList(request.data)
+        const responseData: KobanResultList<KobanThird> = new KobanResultList<KobanThird>(
+          request.data,
+          KobanThird
+        )
         resolve(responseData)
       } catch (error) {
         reject(error)
