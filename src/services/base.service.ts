@@ -59,7 +59,7 @@ abstract class BaseService {
    * @memberof BaseService
    */
   public get serviceUrl(): string {
-    return this.baseUrl + '/' + this.urlService
+    return this.baseUrl + this.urlService
   }
 
   /**
