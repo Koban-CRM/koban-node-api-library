@@ -3,7 +3,9 @@ import {
   KobanInvoice,
   KobanInvoiceUniqueProperty,
   KobanOrderUniqueProperty,
-  KobanThirdUniqueProperty
+  KobanThirdUniqueProperty,
+  KobanResultList,
+  KobanListValue
 } from '../src/koban-api-library'
 import axios from 'axios'
 

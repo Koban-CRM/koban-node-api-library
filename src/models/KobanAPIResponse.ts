@@ -74,10 +74,10 @@ class KobanResultList<T> {
   /**
    * Creates an instance of KobanResultList.
    * @param {*} data
+   * @param {new (...args: any) => T} type
    * @memberof KobanResultList
    */
-  constructor(data: any) {
-    let type: new (...args: any) => T
+  constructor(data: any, type: new (...args: any) => T) {
     const { Length, List } = data
     this.Length = Length
     this.List = List.map((item: T) => {
