@@ -66,11 +66,21 @@ class KobanProductCategory extends KobanBaseModel {
   constructor(productCategory: Partial<IKobanProductCategory> = {}) {
     super(productCategory)
     const { Reference, Label, eShopURL, Obsolete, ParentCategory } = productCategory
-    this.Reference = Reference ? Reference : undefined
-    this.Label = Label ? Label : undefined
-    this.eShopURL = eShopURL ? eShopURL : undefined
-    this.Obsolete = Obsolete ? Obsolete : undefined
-    this.ParentCategory = ParentCategory ? new KobanProductCategory(ParentCategory) : undefined
+    if (Reference) {
+      this.Reference = Reference
+    }
+    if (Label) {
+      this.Label = Label
+    }
+    if (eShopURL) {
+      this.eShopURL = eShopURL
+    }
+    if (Obsolete || Obsolete === false) {
+      this.Obsolete = Obsolete
+    }
+    if (ParentCategory) {
+      this.ParentCategory = new KobanProductCategory(ParentCategory)
+    }
   }
 }
 

@@ -38,8 +38,12 @@ class KobanGeo {
    */
   constructor(geo: Partial<IKobanGeo> = {}) {
     const { X, Y } = geo
-    this.X = X ? X : undefined
-    this.Y = Y ? Y : undefined
+    if (X) {
+      this.X = X
+    }
+    if (Y) {
+      this.Y = Y
+    }
   }
 }
 

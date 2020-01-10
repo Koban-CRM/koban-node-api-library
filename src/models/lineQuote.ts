@@ -41,8 +41,12 @@ class KobanLineQuote extends KobanLine {
   constructor(lineQuote: Partial<IKobanLineQuote> = {}) {
     super(lineQuote)
     const { Label, Notes } = lineQuote
-    this.Label = Label ? Label : undefined
-    this.Notes = Notes ? Notes : undefined
+    if (Label) {
+      this.Label = Label
+    }
+    if (Notes) {
+      this.Notes = Notes
+    }
   }
 }
 

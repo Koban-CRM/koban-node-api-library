@@ -62,11 +62,21 @@ class KobanTag {
    */
   constructor(tag: Partial<IKobanTag> = {}) {
     const { Guid, TagCategory, TagCategoryCode, Label, ExternalCode } = tag
-    this.Guid = Guid ? Guid : undefined
-    this.TagCategory = TagCategory ? TagCategory : undefined
-    this.TagCategoryCode = TagCategoryCode ? TagCategoryCode : undefined
-    this.Label = Label ? Label : undefined
-    this.ExternalCode = ExternalCode ? ExternalCode : undefined
+    if (Guid) {
+      this.Guid = Guid
+    }
+    if (TagCategory) {
+      this.TagCategory = TagCategory
+    }
+    if (TagCategoryCode) {
+      this.TagCategoryCode = TagCategoryCode
+    }
+    if (Label) {
+      this.Label = Label
+    }
+    if (ExternalCode) {
+      this.ExternalCode = ExternalCode
+    }
   }
 }
 

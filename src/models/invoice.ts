@@ -201,36 +201,62 @@ class KobanInvoice extends KobanBaseModel {
       Source,
       Canal
     } = invoice
-    this.Number = Number ? Number : undefined
-    this.Third = Third ? new KobanThird(Third) : undefined
-    this.Contact = Contact ? new KobanContact(Contact) : undefined
-    this.Order = Order ? new KobanOrder(Order) : undefined
+    if (Number) {
+      this.Number = Number
+    }
+    if (Third) {
+      this.Third = new KobanThird(Third)
+    }
+    if (Contact) {
+      this.Contact = new KobanContact(Contact)
+    }
+    if (Order) {
+      this.Order = new KobanOrder(Order)
+    }
     if (InvoiceDate) {
       this.InvoiceDate = InvoiceDate instanceof Date ? InvoiceDate : new Date(InvoiceDate)
-    } else {
-      this.InvoiceDate = undefined
     }
     if (DueDate) {
       this.DueDate = DueDate instanceof Date ? DueDate : new Date(DueDate)
-    } else {
-      this.DueDate = undefined
     }
-    this.Status = Status ? KobanInvoiceStatus[Status as keyof typeof KobanInvoiceStatus] : undefined
-    this.PaymentMode = PaymentMode ? new KobanListValue(PaymentMode) : undefined
-    this.Amount = Amount ? Amount : undefined
-    this.AmountTtc = AmountTtc ? AmountTtc : undefined
-    this.CurrencyCode = CurrencyCode ? CurrencyCode : undefined
+    if (Status) {
+      this.Status = KobanInvoiceStatus[Status as keyof typeof KobanInvoiceStatus]
+    }
+    if (PaymentMode) {
+      this.PaymentMode = new KobanListValue(PaymentMode)
+    }
+    if (Amount) {
+      this.Amount = Amount
+    }
+    if (AmountTtc) {
+      this.AmountTtc = AmountTtc
+    }
+    if (CurrencyCode) {
+      this.CurrencyCode = CurrencyCode
+    }
     this.Lines = Lines
       ? Lines.map(element => {
           return new KobanLine(element)
         })
       : []
-    this.Asset = Asset ? Asset : undefined
-    this.Origin = Origin ? new KobanListValue(Origin) : undefined
-    this.Header = Header ? Header : undefined
-    this.MarketingCampaign = MarketingCampaign ? MarketingCampaign : undefined
-    this.Source = Source ? Source : undefined
-    this.Canal = Canal ? Canal : undefined
+    if (Asset || Asset === false) {
+      this.Asset = Asset
+    }
+    if (Origin) {
+      this.Origin = new KobanListValue(Origin)
+    }
+    if (Header) {
+      this.Header = Header
+    }
+    if (MarketingCampaign) {
+      this.MarketingCampaign = MarketingCampaign
+    }
+    if (Source) {
+      this.Source = Source
+    }
+    if (Canal) {
+      this.Canal = Canal
+    }
   }
 }
 

@@ -94,15 +94,33 @@ class KobanAddress {
    */
   constructor(address: Partial<IKobanAddress> = {}) {
     const { Reference, Compl, Street, ZipCode, City, Name, FirstName, Phone, Country } = address
-    this.Reference = Reference ? Reference : undefined
-    this.Compl = Compl ? Compl : undefined
-    this.Street = Street ? Street : undefined
-    this.ZipCode = ZipCode ? ZipCode : undefined
-    this.City = City ? City : undefined
-    this.Name = Name ? Name : undefined
-    this.FirstName = FirstName ? FirstName : undefined
-    this.Phone = Phone ? Phone : undefined
-    this.Country = Country ? Country : undefined
+    if (Reference) {
+      this.Reference = Reference
+    }
+    if (Compl) {
+      this.Compl = Compl
+    }
+    if (Street) {
+      this.Street = Street
+    }
+    if (ZipCode) {
+      this.ZipCode = ZipCode
+    }
+    if (City) {
+      this.City = City
+    }
+    if (Name) {
+      this.Name = Name
+    }
+    if (FirstName) {
+      this.FirstName = FirstName
+    }
+    if (Phone) {
+      this.Phone = Phone
+    }
+    if (Country) {
+      this.Country = Country
+    }
   }
 }
 

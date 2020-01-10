@@ -41,8 +41,12 @@ class KobanListValue extends KobanBaseModel {
   constructor(listValue: Partial<IKobanListValue> = {}) {
     super(listValue)
     const { Label, Code } = listValue
-    this.Label = Label ? Label : undefined
-    this.Code = Code ? Code : undefined
+    if (Label) {
+      this.Label = Label
+    }
+    if (Code) {
+      this.Code = Code
+    }
   }
 }
 

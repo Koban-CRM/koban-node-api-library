@@ -109,27 +109,44 @@ class KobanQuote extends KobanBaseModel {
       Datesent,
       Sections
     } = quote
-    this.Label = Label ? Label : undefined
-    this.Status = Status ? Status : undefined
-    this.Number = Number ? Number : undefined
-    this.Deal = Deal ? new KobanDeal(Deal) : undefined
-    this.IsWon = IsWon ? IsWon : undefined
+    if (Label) {
+      this.Label = Label
+    }
+    if (Status) {
+      this.Status = Status
+    }
+    if (Number) {
+      this.Number = Number
+    }
+    if (Deal) {
+      this.Deal = new KobanDeal(Deal)
+    }
+    if (IsWon || IsWon === false) {
+      this.IsWon = IsWon
+    }
     if (Datesent) {
       this.Datesent = Datesent instanceof Date ? Datesent : new Date(Datesent)
-    } else {
-      this.Datesent = undefined
     }
     this.Sections = Sections
       ? Sections.map(element => {
-          return {
-            Comments: element.Comments ? element.Comments : undefined,
-            Label: element.Label ? element.Label : undefined,
-            Lines: element.Lines
-              ? element.Lines.map(line => {
-                  return new KobanLineQuote(line)
-                })
-              : []
+          const { Comments, Label, Lines } = element
+          let obj: {
+            Label?: string
+            Comments?: string
+            Lines?: KobanLineQuote[]
+          } = {}
+          if (Comments) {
+            obj.Comments = Comments
           }
+          if (Label) {
+            obj.Label = Label
+          }
+          obj.Lines = Lines
+            ? Lines.map(line => {
+                return new KobanLineQuote(line)
+              })
+            : []
+          return obj
         })
       : []
   }

@@ -261,46 +261,86 @@ class KobanOrder extends KobanBaseModel {
       Structure,
       AmountPayed
     } = order
-    this.Number = Number ? Number : undefined
-    this.Extcode = Extcode ? Extcode : undefined
-    this.Status = Status ? Status : undefined
+    if (Number) {
+      this.Number = Number
+    }
+    if (Extcode) {
+      this.Extcode = Extcode
+    }
+    if (Status) {
+      this.Status = Status
+    }
     if (Dateorder) {
       this.Dateorder = Dateorder instanceof Date ? Dateorder : new Date(Dateorder)
-    } else {
-      this.Dateorder = undefined
     }
     if (DeliveryDateEstimated) {
       this.DeliveryDateEstimated =
         DeliveryDateEstimated instanceof Date
           ? DeliveryDateEstimated
           : new Date(DeliveryDateEstimated)
-    } else {
-      this.DeliveryDateEstimated = undefined
     }
-    this.Third = Third ? new KobanThird(Third) : undefined
-    this.Quote = Quote ? new KobanQuote(Quote) : undefined
-    this.ShippingAddress = ShippingAddress ? new KobanAddress(ShippingAddress) : undefined
-    this.CurrencyCode = CurrencyCode ? CurrencyCode : undefined
-    this.Shipping = Shipping ? new KobanShipping(Shipping) : undefined
-    this.Deal = Deal ? new KobanDeal(Deal) : undefined
+    if (Third) {
+      this.Third = new KobanThird(Third)
+    }
+    if (Quote) {
+      this.Quote = new KobanQuote(Quote)
+    }
+    if (ShippingAddress) {
+      this.ShippingAddress = new KobanAddress(ShippingAddress)
+    }
+    if (CurrencyCode) {
+      this.CurrencyCode = CurrencyCode
+    }
+    if (Shipping) {
+      this.Shipping = new KobanShipping(Shipping)
+    }
+    if (Deal) {
+      this.Deal = new KobanDeal(Deal)
+    }
     this.Lines = Lines
       ? Lines.map(element => {
           return new KobanLine(element)
         })
       : []
-    this.Comments = Comments ? Comments : undefined
-    this.PaymentMode = PaymentMode ? PaymentMode : undefined
-    this.Deposit = Deposit ? new KobanDeposit(Deposit) : undefined
-    this.eShop = eShop ? eShop : undefined
-    this.SellingMode = SellingMode ? SellingMode : undefined
-    this.eShopStatus = eShopStatus ? eShopStatus : undefined
-    this.eShopInvoiceNumber = eShopInvoiceNumber ? eShopInvoiceNumber : undefined
-    this.DeliveryMode = DeliveryMode ? DeliveryMode : undefined
-    this.DeliveryAddress = DeliveryAddress ? new KobanAddress(DeliveryAddress) : undefined
-    this.InvoiceAddress = InvoiceAddress ? new KobanAddress(InvoiceAddress) : undefined
-    this.UtmCampaign = UtmCampaign ? UtmCampaign : undefined
-    this.Structure = Structure ? new KobanListValue(Structure) : undefined
-    this.AmountPayed = AmountPayed ? AmountPayed : undefined
+    if (Comments) {
+      this.Comments = Comments
+    }
+    if (PaymentMode) {
+      this.PaymentMode = PaymentMode
+    }
+    if (Deposit) {
+      this.Deposit = new KobanDeposit(Deposit)
+    }
+    if (eShop) {
+      this.eShop = eShop
+    }
+    if (SellingMode) {
+      this.SellingMode = SellingMode
+    }
+    if (eShopStatus) {
+      this.eShopStatus = eShopStatus
+    }
+    if (eShopInvoiceNumber) {
+      this.eShopInvoiceNumber = eShopInvoiceNumber
+    }
+    if (DeliveryMode) {
+      this.DeliveryMode = DeliveryMode
+    }
+    if (DeliveryAddress) {
+      this.DeliveryAddress = new KobanAddress(DeliveryAddress)
+    }
+    if (InvoiceAddress) {
+      this.InvoiceAddress = new KobanAddress(InvoiceAddress)
+    }
+    if (UtmCampaign) {
+      this.UtmCampaign = UtmCampaign
+    }
+    if (Structure) {
+      this.Structure = new KobanListValue(Structure)
+    }
+    if (AmountPayed) {
+      this.AmountPayed = AmountPayed
+    }
   }
 }
 

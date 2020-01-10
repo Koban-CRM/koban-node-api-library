@@ -70,12 +70,24 @@ class KobanIban {
    */
   constructor(iban: Partial<IKobanIban> = {}) {
     const { BANQUE, GUICHET, NCPT, KEY, SWIFT, IBAN } = iban
-    this.BANQUE = BANQUE ? BANQUE : undefined
-    this.GUICHET = GUICHET ? GUICHET : undefined
-    this.NCPT = NCPT ? NCPT : undefined
-    this.KEY = KEY ? KEY : undefined
-    this.SWIFT = SWIFT ? SWIFT : undefined
-    this.IBAN = IBAN ? IBAN : undefined
+    if (BANQUE) {
+      this.BANQUE = BANQUE
+    }
+    if (GUICHET) {
+      this.GUICHET = GUICHET
+    }
+    if (NCPT) {
+      this.NCPT = NCPT
+    }
+    if (KEY) {
+      this.KEY = KEY
+    }
+    if (SWIFT) {
+      this.SWIFT = SWIFT
+    }
+    if (IBAN) {
+      this.IBAN = IBAN
+    }
   }
 }
 

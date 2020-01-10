@@ -139,8 +139,12 @@ class KobanEShopTrackingOrder {
    */
   constructor(eShopTrackingOrder: Partial<IKobanEShopTrackingOrder> = {}) {
     const { Order, Track } = eShopTrackingOrder
-    this.Order = Order ? new KobanOrder(Order) : undefined
-    this.Track = Track ? new KobanTracking(Track) : undefined
+    if (Order) {
+      this.Order = new KobanOrder(Order)
+    }
+    if (Track) {
+      this.Track = new KobanTracking(Track)
+    }
   }
 }
 

@@ -219,30 +219,68 @@ class KobanProduct extends KobanBaseModel {
       OtherCode,
       Declinaisons
     } = product
-    this.Reference = Reference ? Reference : undefined
-    this.Label = Label ? Label : undefined
-    this.Comments = Comments ? Comments : undefined
-    this.eShopURL = eShopURL ? eShopURL : undefined
-    this.Obsolete = Obsolete ? Obsolete : undefined
-    this.Catproduct = Catproduct ? new KobanProductCategory(Catproduct) : undefined
+    if (Reference) {
+      this.Reference = Reference
+    }
+    if (Label) {
+      this.Label = Label
+    }
+    if (Comments) {
+      this.Comments = Comments
+    }
+    if (eShopURL) {
+      this.eShopURL = eShopURL
+    }
+    if (Obsolete || Obsolete === false) {
+      this.Obsolete = Obsolete
+    }
+    if (Catproduct) {
+      this.Catproduct = new KobanProductCategory(Catproduct)
+    }
     this.MoreFields = MoreFields
       ? MoreFields.map(element => {
           return new KobanFieldValue(element)
         })
       : []
-    this.Prht = Prht ? Prht : undefined
-    this.Margin = Margin ? Margin : undefined
-    this.Ht = Ht ? Ht : undefined
-    this.Ttc = Ttc ? Ttc : undefined
-    this.Vat = Vat ? Vat : undefined
-    this.Unit = Unit ? Unit : undefined
-    this.StockMin = StockMin ? StockMin : undefined
-    this.PCB = PCB ? PCB : undefined
-    this.Regroup = Regroup ? Regroup : undefined
-    this.Classification = Classification ? Classification : undefined
-    this.IsSelling = IsSelling ? IsSelling : undefined
-    this.Model = Model ? Model : undefined
-    this.OtherCode = OtherCode ? OtherCode : undefined
+    if (Prht || Prht === 0) {
+      this.Prht = Prht
+    }
+    if (Margin || Margin === 0) {
+      this.Margin = Margin
+    }
+    if (Ht || Ht === 0) {
+      this.Ht = Ht
+    }
+    if (Ttc || Ttc === 0) {
+      this.Ttc = Ttc
+    }
+    if (Vat || Vat === 0) {
+      this.Vat = Vat
+    }
+    if (Unit) {
+      this.Unit = Unit
+    }
+    if (StockMin || StockMin === 0) {
+      this.StockMin = StockMin
+    }
+    if (PCB || PCB === 0) {
+      this.PCB = PCB
+    }
+    if (Regroup) {
+      this.Regroup = Regroup
+    }
+    if (Classification) {
+      this.Classification = Classification
+    }
+    if (IsSelling || IsSelling === false) {
+      this.IsSelling = IsSelling
+    }
+    if (Model) {
+      this.Model = Model
+    }
+    if (OtherCode) {
+      this.OtherCode = OtherCode
+    }
     this.Declinaisons = Declinaisons
       ? Declinaisons.map(element => {
           return new KobanProductDeclinaison(element)

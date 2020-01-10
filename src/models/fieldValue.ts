@@ -38,8 +38,12 @@ class KobanFieldValue {
    */
   constructor(fieldValue: Partial<IKobanFieldValue> = {}) {
     const { FieldId, Value } = fieldValue
-    this.FieldId = FieldId ? FieldId : undefined
-    this.Value = Value ? Value : undefined
+    if (FieldId) {
+      this.FieldId = FieldId
+    }
+    if (Value || Value === 'false' || Value === '0') {
+      this.Value = Value
+    }
   }
 }
 
