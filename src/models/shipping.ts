@@ -62,11 +62,21 @@ class KobanShipping {
    */
   constructor(shipping: Partial<IKobanShipping> = {}) {
     const { Amount, TaxAmount, AmountTtc, Reference, ShippingMode } = shipping
-    this.Amount = Amount ? Amount : undefined
-    this.TaxAmount = TaxAmount ? TaxAmount : undefined
-    this.AmountTtc = AmountTtc ? AmountTtc : undefined
-    this.Reference = Reference ? Reference : undefined
-    this.ShippingMode = ShippingMode ? ShippingMode : undefined
+    if (Amount || Amount === 0) {
+      this.Amount = Amount
+    }
+    if (TaxAmount || TaxAmount === 0) {
+      this.TaxAmount = TaxAmount
+    }
+    if (AmountTtc || AmountTtc === 0) {
+      this.AmountTtc = AmountTtc
+    }
+    if (Reference) {
+      this.Reference = Reference
+    }
+    if (ShippingMode) {
+      this.ShippingMode = ShippingMode
+    }
   }
 }
 

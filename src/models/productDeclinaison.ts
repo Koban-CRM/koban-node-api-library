@@ -62,15 +62,30 @@ class KobanProductDeclinaison {
    */
   constructor(productDeclinaison: Partial<IKobanProductDeclinaison> = {}) {
     const { Guid, Label, Values } = productDeclinaison
-    this.Guid = Guid ? Guid : undefined
-    this.Label = Label ? Label : undefined
+    if (Guid) {
+      this.Guid = Guid
+    }
+    if (Label) {
+      this.Label = Label
+    }
     this.Values = Values
       ? Values.map(element => {
-          return {
-            BarCode: element.BarCode ? element.BarCode : undefined,
-            Guid: element.Guid ? element.Guid : undefined,
-            Label: element.Label ? element.Label : undefined
+          const { BarCode, Guid, Label } = element
+          let obj: {
+            BarCode?: string
+            Guid?: string
+            Label?: string
+          } = {}
+          if (BarCode) {
+            obj.BarCode = BarCode
           }
+          if (Guid) {
+            obj.Guid = Guid
+          }
+          if (Label) {
+            obj.Label = Label
+          }
+          return obj
         })
       : []
   }

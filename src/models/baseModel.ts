@@ -64,18 +64,20 @@ abstract class KobanBaseModel {
    */
   constructor(base: Partial<IKobanBaseModel> = {}) {
     const { Guid, DUpdated, Updated, DCreated, Created } = base
-    this.Guid = Guid ? Guid : undefined
-    this.DUpdated = DUpdated ? DUpdated : undefined
+    if (Guid) {
+      this.Guid = Guid
+    }
+    if (DUpdated || DUpdated === 0) {
+      this.DUpdated = DUpdated
+    }
     if (Updated) {
       this.Updated = Updated instanceof Date ? Updated : new Date(Updated)
-    } else {
-      this.Updated = undefined
     }
-    this.DCreated = DCreated ? DCreated : undefined
+    if (DCreated || DCreated === 0) {
+      this.DCreated = DCreated
+    }
     if (Created) {
       this.Created = Created instanceof Date ? Created : new Date(Created)
-    } else {
-      this.Created = undefined
     }
   }
 }

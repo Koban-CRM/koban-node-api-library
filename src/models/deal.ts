@@ -222,19 +222,45 @@ class KobanDeal extends KobanBaseModel {
       DResult,
       Tags
     } = deal
-    this.Description = Description ? Description : undefined
-    this.Label = Label ? Label : undefined
-    this.GridLabel = GridLabel ? GridLabel : undefined
-    this.Comments = Comments ? Comments : undefined
-    this.AssignedTo = AssignedTo ? new KobanUser(AssignedTo) : undefined
-    this.Result = Result ? Result : undefined
-    this.Status = Status ? new KobanListValue(Status) : undefined
-    this.Origin = Origin ? new KobanListValue(Origin) : undefined
-    this.Process = Process ? new KobanListValue(Process) : undefined
-    this.Extcode = Extcode ? Extcode : undefined
-    this.Amountprev = Amountprev ? Amountprev : undefined
-    this.Third = Third ? new KobanThird(Third) : undefined
-    this.Contact = Contact ? new KobanContact(Contact) : undefined
+    if (Description) {
+      this.Description = Description
+    }
+    if (Label) {
+      this.Label = Label
+    }
+    if (GridLabel) {
+      this.GridLabel = GridLabel
+    }
+    if (Comments) {
+      this.Comments = Comments
+    }
+    if (AssignedTo) {
+      this.AssignedTo = new KobanUser(AssignedTo)
+    }
+    if (Result) {
+      this.Result = Result
+    }
+    if (Status) {
+      this.Status = new KobanListValue(Status)
+    }
+    if (Origin) {
+      this.Origin = new KobanListValue(Origin)
+    }
+    if (Process) {
+      this.Process = new KobanListValue(Process)
+    }
+    if (Extcode) {
+      this.Extcode = Extcode
+    }
+    if (Amountprev || Amountprev === 0) {
+      this.Amountprev = Amountprev
+    }
+    if (Third) {
+      this.Third = new KobanThird(Third)
+    }
+    if (Contact) {
+      this.Contact = new KobanContact(Contact)
+    }
     this.MoreFields = MoreFields
       ? MoreFields.map(element => {
           return new KobanFieldValue(element)
@@ -248,8 +274,12 @@ class KobanDeal extends KobanBaseModel {
           }
         })
       : []
-    this.DPrev = DPrev ? DPrev : undefined
-    this.DResult = DResult ? DResult : undefined
+    if (DPrev || DPrev === 0) {
+      this.DPrev = DPrev
+    }
+    if (DResult || DResult === 0) {
+      this.DResult = DResult
+    }
     this.Tags = Tags
       ? Tags.map(element => {
           return new KobanTag(element)

@@ -123,17 +123,39 @@ class KobanLine {
       Comments,
       DeclinaisonCode
     } = line
-    this.Product = Product ? new KobanProduct(Product) : undefined
-    this.Quantity = Quantity ? Quantity : undefined
-    this.Vat = Vat ? Vat : undefined
-    this.Red = Red ? Red : undefined
-    this.Ht = Ht ? Ht : undefined
-    this.Ttc = Ttc ? Ttc : undefined
-    this.Prht = Prht ? Prht : undefined
-    this.UnitPrice = UnitPrice ? UnitPrice : undefined
-    this.Extcode = Extcode ? Extcode : undefined
-    this.Comments = Comments ? Comments : undefined
-    this.DeclinaisonCode = DeclinaisonCode ? DeclinaisonCode : undefined
+    if (Product) {
+      this.Product = new KobanProduct(Product)
+    }
+    if (Quantity || Quantity === 0) {
+      this.Quantity = Quantity
+    }
+    if (Vat || Vat === 0) {
+      this.Vat = Vat
+    }
+    if (Red || Red === 0) {
+      this.Red = Red
+    }
+    if (Ht || Ht === 0) {
+      this.Ht = Ht
+    }
+    if (Ttc || Ttc === 0) {
+      this.Ttc = Ttc
+    }
+    if (Prht || Prht === 0) {
+      this.Prht = Prht
+    }
+    if (UnitPrice || UnitPrice === 0) {
+      this.UnitPrice = UnitPrice
+    }
+    if (Extcode) {
+      this.Extcode = Extcode
+    }
+    if (Comments) {
+      this.Comments = Comments
+    }
+    if (DeclinaisonCode) {
+      this.DeclinaisonCode = DeclinaisonCode
+    }
   }
 }
 

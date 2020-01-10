@@ -358,32 +358,84 @@ class KobanThird extends KobanBaseModel {
       Geo,
       IBAN
     } = third
-    this.Label = Label ? Label : undefined
-    this.FirstName = FirstName ? FirstName : undefined
-    this.Gender = Gender ? Gender : undefined
-    this.StructCode = StructCode ? StructCode : undefined
-    this.Status = Status ? new KobanListValue(Status) : undefined
-    this.Type = Type ? new KobanListValue(Type) : undefined
-    this.Extcode = Extcode ? Extcode : undefined
-    this.OtherCode = OtherCode ? OtherCode : undefined
-    this.Comments = Comments ? Comments : undefined
-    this.AccountingCode = AccountingCode ? AccountingCode : undefined
-    this.Address = Address ? new KobanAddress(Address) : undefined
-    this.DelivAddress = DelivAddress ? new KobanAddress(DelivAddress) : undefined
-    this.Website = Website ? Website : undefined
-    this.Phone = Phone ? Phone : undefined
-    this.Cell = Cell ? Cell : undefined
-    this.Fax = Fax ? Fax : undefined
-    this.EMail = EMail ? EMail : undefined
-    this.OfficialNumber = OfficialNumber ? OfficialNumber : undefined
-    this.Vat = Vat ? Vat : undefined
-    this.Unsuscribe = Unsuscribe ? Unsuscribe : undefined
-    this.InvalidMail = InvalidMail ? InvalidMail : undefined
-    this.Title = Title ? Title : undefined
-    this.eShop = eShop ? eShop : undefined
-    this.TaxRate = TaxRate ? TaxRate : undefined
-    this.AssignedTo = AssignedTo ? new KobanUser(AssignedTo) : undefined
-    this.UpdatedBy = Label ? Label : undefined
+    if (Label) {
+      this.Label = Label
+    }
+    if (FirstName) {
+      this.FirstName = FirstName
+    }
+    if (Gender) {
+      this.Gender = Gender
+    }
+    if (StructCode) {
+      this.StructCode = StructCode
+    }
+    if (Status) {
+      this.Status = new KobanListValue(Status)
+    }
+    if (Type) {
+      this.Type = new KobanListValue(Type)
+    }
+    if (Extcode) {
+      this.Extcode = Extcode
+    }
+    if (OtherCode) {
+      this.OtherCode = OtherCode
+    }
+    if (Comments) {
+      this.Comments = Comments
+    }
+    if (AccountingCode) {
+      this.AccountingCode = AccountingCode
+    }
+    if (Address) {
+      this.Address = new KobanAddress(Address)
+    }
+    if (DelivAddress) {
+      this.DelivAddress = new KobanAddress(DelivAddress)
+    }
+    if (Website) {
+      this.Website = Website
+    }
+    if (Phone) {
+      this.Phone = Phone
+    }
+    if (Cell) {
+      this.Cell = Cell
+    }
+    if (Fax) {
+      this.Fax = Fax
+    }
+    if (EMail) {
+      this.EMail = EMail
+    }
+    if (OfficialNumber) {
+      this.OfficialNumber = OfficialNumber
+    }
+    if (Vat) {
+      this.Vat = Vat
+    }
+    if (Unsuscribe || Unsuscribe === false) {
+      this.Unsuscribe = Unsuscribe
+    }
+    if (InvalidMail || InvalidMail === false) {
+      this.InvalidMail = InvalidMail
+    }
+    if (Title) {
+      this.Title = Title
+    }
+    if (eShop) {
+      this.eShop = eShop
+    }
+    if (TaxRate || TaxRate === 0) {
+      this.TaxRate = TaxRate
+    }
+    if (AssignedTo) {
+      this.AssignedTo = new KobanUser(AssignedTo)
+    }
+    if (UpdatedBy) {
+      this.UpdatedBy = UpdatedBy
+    }
     this.Tags = Tags
       ? Tags.map(element => {
           return new KobanTag(element)
@@ -394,14 +446,30 @@ class KobanThird extends KobanBaseModel {
           return new KobanFieldValue(element)
         })
       : []
-    this.Origin = Origin ? new KobanListValue(Origin) : undefined
-    this.NextAction = NextAction
-    this.UTMCampaign = UTMCampaign ? UTMCampaign : undefined
-    this.UTMMedium = UTMMedium ? UTMMedium : undefined
-    this.UTMSource = UTMSource ? UTMSource : undefined
-    this.Optin = Optin ? Optin : undefined
-    this.Geo = Geo ? new KobanGeo(Geo) : undefined
-    this.IBAN = IBAN ? new KobanIban(IBAN) : undefined
+    if (Origin) {
+      this.Origin = new KobanListValue(Origin)
+    }
+    if (NextAction) {
+      this.NextAction = NextAction
+    }
+    if (UTMCampaign) {
+      this.UTMCampaign = UTMCampaign
+    }
+    if (UTMMedium) {
+      this.UTMMedium = UTMMedium
+    }
+    if (UTMSource) {
+      this.UTMSource = UTMSource
+    }
+    if (Optin || Optin === false) {
+      this.Optin = Optin
+    }
+    if (Geo) {
+      this.Geo = new KobanGeo(Geo)
+    }
+    if (IBAN) {
+      this.IBAN = new KobanIban(IBAN)
+    }
   }
 }
 

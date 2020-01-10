@@ -74,7 +74,7 @@ class KobanResultList<T> {
   /**
    * Creates an instance of KobanResultList.
    * @param {*} data
-   * @param {(new (...args: any) => T)} type
+   * @param {new (...args: any) => T} type
    * @memberof KobanResultList
    */
   constructor(data: any, type: new (...args: any) => T) {

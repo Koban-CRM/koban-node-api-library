@@ -34,7 +34,9 @@ class KobanDeposit extends KobanBaseModel {
   constructor(deposit: Partial<IKobanDeposit> = {}) {
     super(deposit)
     const { Label } = deposit
-    this.Label = Label ? Label : undefined
+    if (Label) {
+      this.Label = Label
+    }
   }
 }
 

@@ -72,15 +72,21 @@ class KobanPayment extends KobanBaseModel {
   constructor(payment: Partial<IKobanPayment> = {}) {
     super(payment)
     const { Extcode, Invoice, PaymentDate, Ttc, ModeRglt } = payment
-    this.Extcode = Extcode ? Extcode : undefined
-    this.Invoice = Invoice ? new KobanInvoice(Invoice) : undefined
+    if (Extcode) {
+      this.Extcode = Extcode
+    }
+    if (Invoice) {
+      this.Invoice = new KobanInvoice(Invoice)
+    }
     if (PaymentDate) {
       this.PaymentDate = PaymentDate instanceof Date ? PaymentDate : new Date(PaymentDate)
-    } else {
-      this.PaymentDate = undefined
     }
-    this.Ttc = Ttc ? Ttc : undefined
-    this.ModeRglt = ModeRglt ? new KobanListValue(ModeRglt) : undefined
+    if (Ttc || Ttc === 0) {
+      this.Ttc = Ttc
+    }
+    if (ModeRglt) {
+      this.ModeRglt = new KobanListValue(ModeRglt)
+    }
   }
 }
 

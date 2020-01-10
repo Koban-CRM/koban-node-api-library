@@ -50,9 +50,15 @@ class KobanUser extends KobanBaseModel {
   constructor(user: Partial<IKobanUser> = {}) {
     super(user)
     const { FullName, Extcode, EMail } = user
-    this.FullName = FullName ? FullName : undefined
-    this.Extcode = Extcode ? Extcode : undefined
-    this.EMail = EMail ? EMail : undefined
+    if (FullName) {
+      this.FullName = FullName
+    }
+    if (Extcode) {
+      this.Extcode = Extcode
+    }
+    if (EMail) {
+      this.EMail = EMail
+    }
   }
 }
 

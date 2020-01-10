@@ -275,41 +275,91 @@ class KobanContact extends KobanBaseModel {
       Tags,
       Optin
     } = contact
-    this.Label = Label ? Label : undefined
-    this.GridLabel = GridLabel ? GridLabel : undefined
-    this.Name = Name ? Name : undefined
-    this.FirstName = FirstName ? FirstName : undefined
-    this.Function = Function ? Function : undefined
-    this.Obsolete = Obsolete ? Obsolete : undefined
-    this.CanDecide = CanDecide ? CanDecide : undefined
-    this.CanBuy = CanBuy ? CanBuy : undefined
-    this.IsPrivate = IsPrivate ? IsPrivate : undefined
-    this.Extcode = Extcode ? Extcode : undefined
-    this.Gender = Gender ? Gender : undefined
-    this.Phone = Phone ? Phone : undefined
-    this.Status = Status ? Status : undefined
-    this.Photo = Photo ? Photo : undefined
-    this.ToSync = ToSync ? ToSync : undefined
+    if (Label) {
+      this.Label = Label
+    }
+    if (GridLabel) {
+      this.GridLabel = GridLabel
+    }
+    if (Name) {
+      this.Name = Name
+    }
+    if (FirstName) {
+      this.FirstName = FirstName
+    }
+    if (Function) {
+      this.Function = Function
+    }
+    if (Obsolete || Obsolete === false) {
+      this.Obsolete = Obsolete
+    }
+    if (CanDecide || CanDecide === false) {
+      this.CanDecide = CanDecide
+    }
+    if (CanBuy || CanBuy === false) {
+      this.CanBuy = CanBuy
+    }
+    if (IsPrivate || IsPrivate === false) {
+      this.IsPrivate = IsPrivate
+    }
+    if (Extcode) {
+      this.Extcode = Extcode
+    }
+    if (Gender) {
+      this.Gender = Gender
+    }
+    if (Phone) {
+      this.Phone = Phone
+    }
+    if (Status) {
+      this.Status = Status
+    }
+    if (Photo) {
+      this.Photo = Photo
+    }
+    if (ToSync || ToSync === false) {
+      this.ToSync = ToSync
+    }
     this.MoreFields = MoreFields
       ? MoreFields.map(element => {
           return new KobanFieldValue(element)
         })
       : []
-    this.Unsuscribe = Unsuscribe ? Unsuscribe : undefined
-    this.AssignedTo = AssignedTo ? new KobanUser(AssignedTo) : undefined
-    this.Origin = Origin ? new KobanListValue(Origin) : undefined
-    this.Comments = Comments ? Comments : undefined
-    this.InvalidMail = InvalidMail ? InvalidMail : undefined
-    this.Fax = Fax ? Fax : undefined
-    this.Cell = Cell ? Cell : undefined
-    this.EMail = EMail ? EMail : undefined
-    this.Third = Third ? new KobanThird(Third) : undefined
+    if (Unsuscribe || Unsuscribe === false) {
+      this.Unsuscribe = Unsuscribe
+    }
+    if (AssignedTo) {
+      this.AssignedTo = new KobanUser(AssignedTo)
+    }
+    if (Origin) {
+      this.Origin = new KobanListValue(Origin)
+    }
+    if (Comments) {
+      this.Comments = Comments
+    }
+    if (InvalidMail || InvalidMail === false) {
+      this.InvalidMail = InvalidMail
+    }
+    if (Fax) {
+      this.Fax = Fax
+    }
+    if (Cell) {
+      this.Cell = Cell
+    }
+    if (EMail) {
+      this.EMail = EMail
+    }
+    if (Third) {
+      this.Third = new KobanThird(Third)
+    }
     this.Tags = Tags
       ? Tags.map(element => {
           return new KobanTag(element)
         })
       : []
-    this.Optin = Optin ? Optin : undefined
+    if (Optin || Optin === false) {
+      this.Optin = Optin
+    }
   }
 }
 
