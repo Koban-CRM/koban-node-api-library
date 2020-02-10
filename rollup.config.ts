@@ -44,7 +44,10 @@ export default {
     // Allow json resolution
     json(),
     // Compile TypeScript files
-    typescript({ useTsconfigDeclarationDir: true }),
+    typescript({
+      useTsconfigDeclarationDir: true,
+      clean: true
+    }),
     // typescript({module: 'CommonJS'}),
     // typescript({
     //   typescript: require('typescript'),

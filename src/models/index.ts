@@ -11,7 +11,8 @@ import {
   KobanPaymentUniqueProperty,
   KobanProductCategoryUniqueProperty,
   KobanProductUniqueProperty,
-  KobanThirdUniqueProperty
+  KobanThirdUniqueProperty,
+  KobanActionUniqueProperty
 } from './enums'
 import { KobanNullable } from './types'
 import { KobanFieldValue, IKobanFieldValue } from './fieldValue'
@@ -48,9 +49,15 @@ import {
   IKobanEShopTrackingOrder,
   IKobanTracking
 } from './eShop'
+import { IKobanAction, KobanAction } from './action'
+import { IKobanActionType, KobanActionType } from './actionType'
+import { IKobanLead, KobanLead } from './lead'
+import { IKobanProject, KobanProject } from './project'
 
 export {
   KobanNullable,
+  IKobanAction,
+  IKobanActionType,
   IKobanAPIResponse,
   IKobanAddress,
   IKobanBaseModel,
@@ -63,6 +70,7 @@ export {
   IKobanGeo,
   IKobanIban,
   IKobanInvoice,
+  IKobanLead,
   IKobanLine,
   IKobanLineQuote,
   IKobanListValue,
@@ -71,12 +79,16 @@ export {
   IKobanProduct,
   IKobanProductCategory,
   IKobanProductDeclinaison,
+  IKobanProject,
   IKobanQuote,
   IKobanShipping,
   IKobanTag,
   IKobanThird,
   IKobanTracking,
   IKobanUser,
+  KobanAction,
+  KobanActionUniqueProperty,
+  KobanActionType,
   KobanAddress,
   KobanAPIResponse,
   KobanBaseModel,
@@ -92,6 +104,7 @@ export {
   KobanInvoice,
   KobanInvoiceStatus,
   KobanInvoiceUniqueProperty,
+  KobanLead,
   KobanLine,
   KobanLineQuote,
   KobanListValue,
@@ -104,6 +117,7 @@ export {
   KobanProductCategoryUniqueProperty,
   KobanProductDeclinaison,
   KobanProductUniqueProperty,
+  KobanProject,
   KobanQuote,
   KobanResultList,
   KobanShipping,

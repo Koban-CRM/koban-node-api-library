@@ -5,6 +5,7 @@
 // export default KobanSDK;
 export { KobanSDK } from './sdk'
 export {
+  ActionService,
   BaseService,
   IConfigService,
   InvoiceService,
@@ -17,6 +18,8 @@ export {
 } from './services'
 export {
   KobanNullable,
+  IKobanAction,
+  IKobanActionType,
   IKobanAPIResponse,
   IKobanAddress,
   IKobanBaseModel,
@@ -29,6 +32,7 @@ export {
   IKobanGeo,
   IKobanIban,
   IKobanInvoice,
+  IKobanLead,
   IKobanLine,
   IKobanLineQuote,
   IKobanListValue,
@@ -37,12 +41,15 @@ export {
   IKobanProduct,
   IKobanProductCategory,
   IKobanProductDeclinaison,
+  IKobanProject,
   IKobanQuote,
   IKobanShipping,
   IKobanTag,
   IKobanThird,
   IKobanTracking,
   IKobanUser,
+  KobanAction,
+  KobanActionType,
   KobanAddress,
   KobanAPIResponse,
   KobanBaseModel,
@@ -55,6 +62,7 @@ export {
   KobanGeo,
   KobanIban,
   KobanInvoice,
+  KobanLead,
   KobanLine,
   KobanLineQuote,
   KobanListValue,
@@ -63,6 +71,7 @@ export {
   KobanProduct,
   KobanProductCategory,
   KobanProductDeclinaison,
+  KobanProject,
   KobanQuote,
   KobanResultList,
   KobanShipping,
@@ -72,6 +81,7 @@ export {
   KobanUser
 } from './models'
 export {
+  KobanActionUniqueProperty,
   KobanDealUniqueProperty,
   KobanInvoiceStatus,
   KobanInvoiceUniqueProperty,

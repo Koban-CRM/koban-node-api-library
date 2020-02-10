@@ -5,7 +5,8 @@ import {
   ListService,
   ThirdService,
   ProductCategoryService,
-  ProductService
+  ProductService,
+  ActionService
 } from './services'
 
 /**
@@ -139,6 +140,14 @@ class KobanSDK implements IConfig {
   public productService: ProductService
 
   /**
+   * Action Service
+   *
+   * @type {ActionService}
+   * @memberof KobanSDK
+   */
+  public actionService: ActionService
+
+  /**
    * Creates an instance of KobanSDK.
    *
    * @param {!IConfig} config
@@ -179,6 +188,11 @@ class KobanSDK implements IConfig {
       user: this.user
     })
     this.productService = new ProductService({
+      baseUrl: this.buildBaseUrl(),
+      key: this.token,
+      user: this.user
+    })
+    this.actionService = new ActionService({
       baseUrl: this.buildBaseUrl(),
       key: this.token,
       user: this.user

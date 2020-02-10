@@ -118,6 +118,18 @@ enum KobanProductUniqueProperty {
   OtherCode = 'OtherCode'
 }
 
+/**
+ * Propriété définissant la clé d'action associée
+ *
+ * @enum {number}
+ */
+enum KobanActionUniqueProperty {
+  /** Guid */
+  Guid = 'Guid',
+  /** Code externe */
+  Extcode = 'Extcode'
+}
+
 export {
   KobanDealUniqueProperty,
   KobanInvoiceStatus,
@@ -126,5 +138,6 @@ export {
   KobanPaymentUniqueProperty,
   KobanProductCategoryUniqueProperty,
   KobanProductUniqueProperty,
-  KobanThirdUniqueProperty
+  KobanThirdUniqueProperty,
+  KobanActionUniqueProperty
 }
