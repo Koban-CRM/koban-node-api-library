@@ -6,8 +6,10 @@ import { ListService } from './list.service'
 import { ThirdService } from './third.service'
 import { ProductCategoryService } from './productCategory.service'
 import { ProductService } from './product.service'
+import { ActionService } from './action.service'
 
 export {
+  ActionService,
   BaseService,
   IConfigService,
   InvoiceService,

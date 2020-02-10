@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { KobanNullable } from './types'
 import { KobanOrder, IKobanOrder } from './order'
 import { IKobanThird, KobanThird } from './third'
