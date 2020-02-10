@@ -29,7 +29,7 @@ class ActionService extends BaseService {
    * @returns {Promise<KobanAction>}
    * @memberof ActionService
    */
-  public async postOne(action: KobanAction): Promise<KobanAction> {
+  public async PostOne(action: KobanAction): Promise<KobanAction> {
     return new Promise<KobanAction>(async (resolve, reject) => {
       try {
         const request = await axios.post(`${this.serviceUrl}`, action, {
