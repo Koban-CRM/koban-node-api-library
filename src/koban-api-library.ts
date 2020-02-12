@@ -73,6 +73,7 @@ export {
   KobanProductDeclinaison,
   KobanProject,
   KobanQuote,
+  KobanResult,
   KobanResultList,
   KobanShipping,
   KobanTag,

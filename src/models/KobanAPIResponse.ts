@@ -86,4 +86,50 @@ class KobanResultList<T> {
   }
 }
 
-export { KobanAPIResponse, KobanResultList }
+class KobanResult<T> {
+  /**
+   *
+   *
+   * @type {any}
+   * @memberof KobanResult
+   */
+  public Result: T
+  /**
+   *
+   *
+   * @type {boolean}
+   * @memberof KobanResult
+   */
+  public Success: boolean
+  /**
+   *
+   *
+   * @type {(string)}
+   * @memberof KobanResult
+   */
+  public Message?: string
+  /**
+   *
+   *
+   * @type {string[]}
+   * @memberof KobanResult
+   */
+  public Errors!: string[]
+
+  /**
+   * Creates an instance of KobanResult.
+   * @param {object} data
+   * @memberof KobanResult
+   */
+  constructor(data: any, type: new (...args: any) => T) {
+    const { Result, Success, Message, Errors } = data
+    this.Result = new type(Result)
+    this.Success = Success
+    if (Message) {
+      this.Message = Message
+    }
+    this.Errors = Errors && Errors.Lenght > 0 ? Errors : []
+  }
+}
+
+export { KobanAPIResponse, KobanResultList, KobanResult }

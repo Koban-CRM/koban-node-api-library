@@ -7,6 +7,7 @@ import { ThirdService } from './third.service'
 import { ProductCategoryService } from './productCategory.service'
 import { ProductService } from './product.service'
 import { ActionService } from './action.service'
+import { TagService } from './tag.service'
 
 export {
   ActionService,
@@ -18,5 +19,6 @@ export {
   ProductCategoryService,
   OrderService,
   ListService,
+  TagService,
   ThirdService
 }

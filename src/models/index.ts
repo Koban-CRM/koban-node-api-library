@@ -27,7 +27,7 @@ import {
   IProductCategoryGetUpdated
 } from './interfaces'
 import { KobanInvoice, IKobanInvoice } from './invoice'
-import { KobanAPIResponse, KobanResultList } from './KobanAPIResponse'
+import { KobanAPIResponse, KobanResultList, KobanResult } from './KobanAPIResponse'
 import { KobanLine, IKobanLine } from './line'
 import { KobanLineQuote, IKobanLineQuote } from './lineQuote'
 import { KobanListValue, IKobanListValue } from './listValue'
@@ -119,6 +119,7 @@ export {
   KobanProductUniqueProperty,
   KobanProject,
   KobanQuote,
+  KobanResult,
   KobanResultList,
   KobanShipping,
   KobanTag,
