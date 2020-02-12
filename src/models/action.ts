@@ -10,6 +10,7 @@ import { IKobanTag, KobanTag } from './tag'
 import { IKobanActionType, KobanActionType } from './actionType'
 import { IKobanLead, KobanLead } from './lead'
 import { IKobanProject, KobanProject } from './project'
+import { KobanInvoice, IKobanInvoice } from './invoice'
 
 /**
  *
@@ -31,6 +32,7 @@ interface IKobanAction extends IKobanBaseModel {
   Contact: KobanNullable<Partial<IKobanContact>>
   Lead: KobanNullable<Partial<IKobanLead>>
   Project: KobanNullable<Partial<IKobanProject>>
+  Invoice: KobanNullable<Partial<IKobanInvoice>>
   ActionType: KobanNullable<string | Partial<IKobanActionType>>
   DStart: KobanNullable<Date | number>
   DEnd: KobanNullable<Date | number>
@@ -143,6 +145,13 @@ class KobanAction extends KobanBaseModel {
   /**
    *
    *
+   * @type {KobanInvoice}
+   * @memberof KobanAction
+   */
+  public Invoice?: KobanInvoice
+  /**
+   *
+   *
    * @type {string}
    * @memberof KobanAction
    */
@@ -225,6 +234,7 @@ class KobanAction extends KobanBaseModel {
       Contact,
       Lead,
       Project,
+      Invoice,
       ActionType,
       DStart,
       DEnd,
@@ -273,6 +283,9 @@ class KobanAction extends KobanBaseModel {
     }
     if (Project) {
       this.Project = new KobanProject(Project)
+    }
+    if (Invoice) {
+      this.Invoice = new KobanInvoice(Invoice)
     }
     if (ActionType) {
       this.ActionType =
