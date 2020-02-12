@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { KobanTag, KobanResult } from '../models'
+import { KobanTag, KobanAPIResponse } from '../models'
 import { BaseService, IConfigService } from './base.service'
 
 /**
@@ -21,11 +21,11 @@ class TagService extends BaseService {
    * Ajoute un tag a une catégorie.
    *
    * @param {KobanAction} tag
-   * @returns {Promise<KobanAction>}
+   * @returns {Promise<KobanAPIResponse>}
    * @memberof TagService
    */
-  public async PostAddToCategory(tag: KobanTag): Promise<KobanResult<String>> {
-    return new Promise<KobanResult<String>>(async (resolve, reject) => {
+  public async PostAddToCategory(tag: KobanTag): Promise<KobanAPIResponse> {
+    return new Promise<KobanAPIResponse>(async (resolve, reject) => {
       try {
         const request = await axios.post(`${this.serviceUrl}/PostAddToCategory`, tag, {
           headers: {
@@ -34,7 +34,7 @@ class TagService extends BaseService {
             'X-ncUser': this.user
           }
         })
-        const responseData: KobanResult<String> = new KobanResult<String>(request.data, String)
+        const responseData: KobanAPIResponse = new KobanAPIResponse(request.data)
         if (!responseData.Success) {
           throw this.handleApiError(responseData)
         }
