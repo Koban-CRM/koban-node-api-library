@@ -165,11 +165,14 @@ class InvoiceService extends BaseService {
             amount
           }
         }
-        const request = await axios.post(`${this.serviceUrl}/GenerateAsset`, body, {
+        const request = await axios.post(`${this.serviceUrl}/GenerateAsset`, null, {
           headers: {
             Accept: 'application/json',
             'X-ncApi': this.key,
             'X-ncUser': this.user
+          },
+          params: {
+            id
           }
         })
         const responseData: KobanAPIResponse = new KobanAPIResponse(request.data)
