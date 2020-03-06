@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>@koban-crm/api-library | @koban-crm/api-library</title>
+	<title>Koban | Node API Library - v1.3.3 | Koban | Node API Library - v1.3.3</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -2335,7 +2335,7 @@ img {
 		<div class="container">
 			<div class="table-wrap">
 				<div class="table-cell">
-					<strong><a href="index.html">@koban-crm/api-library</a></strong>
+					<strong><a href="index.html">Koban | Node API Library - v1.3.3</a></strong>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -2640,15 +2640,76 @@ img {
 <div class="container container-main">
 	<div class="content-wrap">
 		<div class="tsd-panel tsd-typography">
-			<a href="#koban-node-api-library" id="koban-node-api-library" style="color: inherit; text-decoration: none;">
-				<h1>koban-node-api-library</h1>
+			<a href="#koban--node-api-library" id="koban--node-api-library" style="color: inherit; text-decoration: none;">
+				<h1>Koban | Node API Library</h1>
 			</a>
 			<p>API SDK for Koban CRM</p>
-			<p><a href="https://github.com/semantic-release/semantic-release"><img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="semantic-release"></a>
-				<img src="https://github.com/Koban-CRM/koban-node-api-library/workflows/CI/badge.svg" alt="Build Status">
-				<a href="https://github.com/Koban-CRM/koban-node-api-library/releases"><img src="https://github.com/Koban-CRM/koban-node-api-library/workflows/Release/badge.svg" alt="Build Status"></a>
-				<a href="https://codecov.io/gh/Koban-CRM/koban-node-api-library"><img src="https://codecov.io/gh/Koban-CRM/koban-node-api-library/branch/master/graph/badge.svg" alt="codecov"></a>
-			<a href="https://www.npmjs.com/package/@koban-crm/api-library"><img src="https://img.shields.io/npm/v/@koban-crm/api-library?style=flat-square" alt="NPM version"></a></p>
+			<p><a href="https://www.npmjs.com/package/@koban-crm/api-library"><img src="https://img.shields.io/npm/v/@koban-crm/api-library?style=flat-square" alt="NPM version"></a> <a href="https://koban-crm.github.io/koban-node-api-library/"><img src="https://img.shields.io/badge/Docs-online-blue.svg?style=flat-square" alt="Generic badge"></a></p>
+			<p><img src="https://github.com/Koban-CRM/koban-node-api-library/workflows/CI/badge.svg" alt="Build Status">
+			<a href="https://github.com/Koban-CRM/koban-node-api-library/releases"><img src="https://github.com/Koban-CRM/koban-node-api-library/workflows/Release/badge.svg" alt="Build Status"></a></p>
+			<p><a href="https://codecov.io/gh/Koban-CRM/koban-node-api-library"><img src="https://codecov.io/gh/Koban-CRM/koban-node-api-library/branch/master/graph/badge.svg" alt="codecov"></a></p>
+			<p><a href="https://github.com/semantic-release/semantic-release"><img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="semantic-release"></a></p>
+			<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+				<h2>Installation</h2>
+			</a>
+			<a href="#with-yarn" id="with-yarn" style="color: inherit; text-decoration: none;">
+				<h3>with yarn</h3>
+			</a>
+			<pre><code class="language-bash">yarn add @koban-crm/api-library</code></pre>
+			<a href="#with-npm" id="with-npm" style="color: inherit; text-decoration: none;">
+				<h3>with npm</h3>
+			</a>
+			<pre><code class="language-bash">npm install @koban-crm/api-library</code></pre>
+			<a href="#initialize" id="initialize" style="color: inherit; text-decoration: none;">
+				<h2>Initialize</h2>
+			</a>
+			<a href="#with-import" id="with-import" style="color: inherit; text-decoration: none;">
+				<h3>with import</h3>
+			</a>
+			<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { KobanSDK } <span class="hljs-keyword">from</span> <span class="hljs-string">'@koban-crm/api-library'</span>;
+
+<span class="hljs-keyword">const</span> optionsSDK = {
+  kobanInstance: <span class="hljs-string">'http://instance.koban/'</span>,
+  token: <span class="hljs-string">'TokenXXX'</span>,
+  user: <span class="hljs-string">'UserKeyXXX'</span>,
+};
+
+<span class="hljs-keyword">const</span> skdKoban = <span class="hljs-keyword">new</span> KobanSDK(optionsSDK);</code></pre>
+			<a href="#with-require" id="with-require" style="color: inherit; text-decoration: none;">
+				<h3>with require</h3>
+			</a>
+			<pre><code class="language-javascript"><span class="hljs-keyword">const</span> kobanApi = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@koban-crm/api-library'</span>);
+<span class="hljs-comment">/**
+ * Can also be used wwith named export like
+ * const { KobanSDK } = require('@koban-crm/api-library');
+ */</span>
+
+<span class="hljs-keyword">const</span> optionsSDK = {
+  <span class="hljs-attr">kobanInstance</span>: <span class="hljs-string">'http://instance.koban/'</span>,
+  <span class="hljs-attr">token</span>: <span class="hljs-string">'TokenXXX'</span>,
+  <span class="hljs-attr">user</span>: <span class="hljs-string">'UserKeyXXX'</span>,
+};
+
+<span class="hljs-keyword">const</span> skdKoban = <span class="hljs-keyword">new</span> kobanApi.KobanSDK(optionsSDK);</code></pre>
+			<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+				<h2>Usage</h2>
+			</a>
+			<a href="#with-asyncawait" id="with-asyncawait" style="color: inherit; text-decoration: none;">
+				<h3>with async/await</h3>
+			</a>
+			<pre><code class="language-typescript"><span class="hljs-comment">// Get Koban Invoice</span>
+<span class="hljs-keyword">let</span> invoice = <span class="hljs-keyword">await</span> skdKoban.invoiceService.getOne(<span class="hljs-string">'InvoiceIdXXX'</span>);</code></pre>
+			<a href="#with-callback" id="with-callback" style="color: inherit; text-decoration: none;">
+				<h3>with callback</h3>
+			</a>
+			<pre><code class="language-javascript"><span class="hljs-comment">// Get Koban Invoice</span>
+<span class="hljs-keyword">let</span> invoice = skdKoban.invoiceService.getOne(<span class="hljs-string">'InvoiceIdXXX'</span>)
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+  <span class="hljs-keyword">return</span> data;
+}).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(err);
+});</code></pre>
+			<p>Full Documentation <a href="https://koban-crm.github.io/koban-node-api-library/">here</a></p>
 		</div>
 		<div style="position:relative;"><a name="typedoc-main-index" class="tsd-anchor"></a></div>
 		<section class="tsd-panel-group tsd-index-group">
@@ -2776,7 +2837,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">Koban<wbr>Nullable&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Koban-CRM/koban-node-api-library/blob/166f8ac/src/models/types.ts#L1">models/types.ts:1</a></li>
+						<li>Defined in <a href="https://github.com/Koban-CRM/koban-node-api-library/blob/79b6b5e/src/models/types.ts#L1">models/types.ts:1</a></li>
 					</ul>
 				</aside>
 				<h4 class="tsd-type-parameters-title">Type parameters</h4>
