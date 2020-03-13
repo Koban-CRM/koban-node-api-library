@@ -370,12 +370,12 @@ class ThirdService extends BaseService {
   /**
    * Remove Tags from a Third
    *
-   * @param {KobanTag} tags Liste des Tag a supprimer
+   * @param {KobanTag[]} tags Liste des Tag a supprimer
    * @param {string} id Identifiant du Compte
    * @returns {Promise<boolean>}
    * @memberof ThirdService
    */
-  public async removeTagsFromThird(tags: KobanTag, id: string): Promise<boolean> {
+  public async removeTagsFromThird(tags: KobanTag[], id: string): Promise<boolean> {
     return new Promise<boolean>(async (resolve, reject) => {
       try {
         const request = await axios.post(`${this.serviceUrl}/RemoveTagsFromThird`, tags, {
