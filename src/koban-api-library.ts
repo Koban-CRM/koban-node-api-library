@@ -2,7 +2,7 @@
 // import "core-js/fn/array.find"
 // ...
 // import { KobanSDK } from './sdk';
-export default KobanSDK
+// export default KobanSDK
 export { KobanSDK } from './sdk'
 export {
   ActionService,
@@ -16,7 +16,7 @@ export {
   OrderService,
   ListService,
   ThirdService,
-  QuoteService
+  QuoteService,
 } from './services'
 export {
   KobanNullable,
@@ -81,7 +81,7 @@ export {
   KobanTag,
   KobanThird,
   KobanTracking,
-  KobanUser
+  KobanUser,
 } from './models'
 export {
   KobanActionUniqueProperty,
@@ -93,12 +93,12 @@ export {
   KobanProductCategoryUniqueProperty,
   KobanProductUniqueProperty,
   KobanThirdUniqueProperty,
-  KobanQuoteUniqueProperty
+  KobanQuoteUniqueProperty,
 } from './models'
 export {
   IOrderGetByDate,
   IOrderGetUpdated,
   IThirdGetUpdated,
   IThirdGetStatus,
-  IProductCategoryGetUpdated
+  IProductCategoryGetUpdated,
 } from './models'
