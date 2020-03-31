@@ -7,6 +7,7 @@ export { KobanSDK } from './sdk'
 export {
   ActionService,
   BaseService,
+  DealService,
   IConfigService,
   InvoiceService,
   PaymentService,

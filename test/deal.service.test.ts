@@ -1,8 +1,8 @@
 import {
   KobanSDK,
-  KobanQuote,
-  KobanQuoteUniqueProperty,
-  KobanDealUniqueProperty
+  KobanDeal,
+  KobanDealUniqueProperty,
+  KobanThirdUniqueProperty
 } from '../src/koban-api-library'
 import axios from 'axios'
 import {} from '../src/models'
@@ -14,38 +14,38 @@ const mockedAxios = axios as jest.Mocked<typeof axios>
 /**
  *
  */
-describe('Quote Service', () => {
+describe('Deal Service', () => {
   let kobanSDK: KobanSDK
-  let quote: KobanQuote
-  let quotes: KobanQuote[] = []
+  let deal: KobanDeal
+  let deals: KobanDeal[] = []
 
   beforeEach(() => {
     kobanSDK = new KobanSDK({
       token: '',
       user: ''
     })
-    quote = new KobanQuote({})
-    quotes = []
-    quotes.push(quote)
+    deal = new KobanDeal({})
+    deals = []
+    deals.push(deal)
   })
 
   afterEach(() => {
     jest.clearAllMocks()
   })
 
-  it('should throw error if more than 100 quotes send to api', async () => {
+  it('should throw error if more than 100 deals send to api', async () => {
     for (let i = 1; i <= 100; i++) {
-      quotes.push(new KobanQuote())
+      deals.push(new KobanDeal())
     }
     await expect(
-      kobanSDK.quoteService.PostMany(
-        quotes,
-        KobanQuoteUniqueProperty.Number,
-        KobanDealUniqueProperty.Extcode
+      kobanSDK.dealService.PostMany(
+        deals,
+        KobanDealUniqueProperty.Extcode,
+        KobanThirdUniqueProperty.Extcode
       )
     ).rejects.toThrow(
       new Error(
-        `You are trying to send 101 quotes but only a maximum of 100 is accepted per api call.`
+        `You are trying to send 101 deals but only a maximum of 100 is accepted per api call.`
       )
     )
   })
@@ -61,10 +61,10 @@ describe('Quote Service', () => {
     mockedAxios.post.mockResolvedValue(resp)
 
     // work
-    const result = await kobanSDK.quoteService.PostMany(
-      [quote],
-      KobanQuoteUniqueProperty.Number,
-      KobanDealUniqueProperty.Extcode
+    const result = await kobanSDK.dealService.PostMany(
+      [deal],
+      KobanDealUniqueProperty.Extcode,
+      KobanThirdUniqueProperty.Extcode
     )
 
     // expect
@@ -94,10 +94,10 @@ describe('Quote Service', () => {
 
     // work
     await expect(
-      kobanSDK.quoteService.PostMany(
-        [quote],
-        KobanQuoteUniqueProperty.Number,
-        KobanDealUniqueProperty.Extcode
+      kobanSDK.dealService.PostMany(
+        [deal],
+        KobanDealUniqueProperty.Extcode,
+        KobanThirdUniqueProperty.Extcode
       )
     ).rejects.toThrow(new Error(resp.data.Errors.join('\n')))
   })
