@@ -12,7 +12,8 @@ import {
   KobanProductCategoryUniqueProperty,
   KobanProductUniqueProperty,
   KobanThirdUniqueProperty,
-  KobanActionUniqueProperty
+  KobanActionUniqueProperty,
+  KobanQuoteUniqueProperty
 } from './enums'
 import { KobanNullable } from './types'
 import { KobanFieldValue, IKobanFieldValue } from './fieldValue'
@@ -119,6 +120,7 @@ export {
   KobanProductUniqueProperty,
   KobanProject,
   KobanQuote,
+  KobanQuoteUniqueProperty,
   KobanResult,
   KobanResultList,
   KobanShipping,

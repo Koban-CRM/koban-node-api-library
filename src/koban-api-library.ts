@@ -2,7 +2,7 @@
 // import "core-js/fn/array.find"
 // ...
 // import { KobanSDK } from './sdk';
-// export default KobanSDK;
+export default KobanSDK
 export { KobanSDK } from './sdk'
 export {
   ActionService,
@@ -14,7 +14,8 @@ export {
   ProductCategoryService,
   OrderService,
   ListService,
-  ThirdService
+  ThirdService,
+  QuoteService
 } from './services'
 export {
   KobanNullable,
