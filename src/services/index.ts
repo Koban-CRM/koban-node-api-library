@@ -8,10 +8,13 @@ import { ProductCategoryService } from './productCategory.service'
 import { ProductService } from './product.service'
 import { ActionService } from './action.service'
 import { TagService } from './tag.service'
+import { QuoteService } from './quote.service'
+import { DealService } from './deal.service'
 
 export {
   ActionService,
   BaseService,
+  DealService,
   IConfigService,
   InvoiceService,
   PaymentService,
@@ -20,5 +23,6 @@ export {
   OrderService,
   ListService,
   TagService,
-  ThirdService
+  ThirdService,
+  QuoteService
 }

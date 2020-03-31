@@ -123,28 +123,28 @@ module.exports = {
     ],
     "spaced-comment": "error",
     "use-isnan": "error",
+    "handle-callback-err": [
+      2,
+      "^(err|error)$"
+    ],
+    "no-duplicate-case": 2,
+    "no-empty-character-class": 2,
+    "no-ex-assign": 2,
+    "no-extra-boolean-cast": 2,
+    "no-inner-declarations": [
+      2,
+      "functions"
+    ],
+    "no-unexpected-multiline": 2,
+    "no-sparse-arrays": 2,
+    "valid-typeof": 2,
     "@typescript-eslint/tslint/config": [
       "error",
       {
         "rules": {
-          "handle-callback-err": [
-            true,
-            "^(err|error)$"
-          ],
           "jsdoc-format": true,
-          "no-duplicate-case": true,
-          "no-empty-character-class": true,
-          "no-ex-assign": true,
-          "no-extra-boolean-cast": true,
-          "no-inner-declarations": [
-            true,
-            "functions"
-          ],
           "no-reference-import": true,
-          "no-unexpected-multiline": true,
           "strict-type-predicates": true,
-          "ter-no-sparse-arrays": true,
-          "valid-typeof": true
         }
       }
     ]

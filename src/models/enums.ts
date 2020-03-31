@@ -130,6 +130,16 @@ enum KobanActionUniqueProperty {
   Extcode = 'Extcode'
 }
 
+/**
+ * Propriété définissant la clé de l'opportunité associée
+ *
+ * @enum {number}
+ */
+enum KobanQuoteUniqueProperty {
+  /** Numéro */
+  Number = 'Number'
+}
+
 export {
   KobanDealUniqueProperty,
   KobanInvoiceStatus,
@@ -139,5 +149,6 @@ export {
   KobanProductCategoryUniqueProperty,
   KobanProductUniqueProperty,
   KobanThirdUniqueProperty,
-  KobanActionUniqueProperty
+  KobanActionUniqueProperty,
+  KobanQuoteUniqueProperty
 }

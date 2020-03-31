@@ -7,7 +7,9 @@ import {
   ProductCategoryService,
   ProductService,
   ActionService,
-  TagService
+  TagService,
+  QuoteService,
+  DealService
 } from './services'
 
 /**
@@ -157,6 +159,22 @@ class KobanSDK implements IConfig {
   public tagService: TagService
 
   /**
+   * Quote Service
+   *
+   * @type {QuoteService}
+   * @memberof KobanSDK
+   */
+  public quoteService: QuoteService
+
+  /**
+   * Deal Service
+   *
+   * @type {DealService}
+   * @memberof KobanSDK
+   */
+  public dealService: DealService
+
+  /**
    * Creates an instance of KobanSDK.
    *
    * @param {!IConfig} config
@@ -207,6 +225,16 @@ class KobanSDK implements IConfig {
       user: this.user
     })
     this.tagService = new TagService({
+      baseUrl: this.buildBaseUrl(),
+      key: this.token,
+      user: this.user
+    })
+    this.quoteService = new QuoteService({
+      baseUrl: this.buildBaseUrl(),
+      key: this.token,
+      user: this.user
+    })
+    this.dealService = new DealService({
       baseUrl: this.buildBaseUrl(),
       key: this.token,
       user: this.user
