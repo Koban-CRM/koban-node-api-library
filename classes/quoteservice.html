@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IConfigService | Koban | Node API Library - v1.4.0</title>
+	<title>QuoteService | Koban | Node API Library - v1.4.0</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -2721,17 +2721,32 @@ img {
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
-		<li class="current tsd-kind-interface">
-			<a href="iconfigservice.html" class="tsd-kind-icon">IConfig<wbr>Service</a>
+		<li class="current tsd-kind-class">
+			<a href="quoteservice.html" class="tsd-kind-icon">Quote<wbr>Service</a>
 			<ul>
-				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="iconfigservice.html#baseurl" class="tsd-kind-icon">base<wbr>Url</a>
+				<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<a href="quoteservice.html#constructor" class="tsd-kind-icon">constructor</a>
 				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="iconfigservice.html#key" class="tsd-kind-icon">key</a>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-private">
+					<a href="quoteservice.html#baseurl" class="tsd-kind-icon">base<wbr>Url</a>
 				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="iconfigservice.html#user" class="tsd-kind-icon">user</a>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-private">
+					<a href="quoteservice.html#key" class="tsd-kind-icon">key</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-private">
+					<a href="quoteservice.html#urlservice" class="tsd-kind-icon">url<wbr>Service</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-private">
+					<a href="quoteservice.html#user" class="tsd-kind-icon">user</a>
+				</li>
+				<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a href="quoteservice.html#serviceurl" class="tsd-kind-icon">service<wbr>Url</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="quoteservice.html#postmany" class="tsd-kind-icon">Post<wbr>Many</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a href="quoteservice.html#handleapierror" class="tsd-kind-icon">handle<wbr>Api<wbr>Error</a>
 				</li>
 			</ul>
 		</li>
@@ -2741,18 +2756,18 @@ img {
 	<div class="content-wrap">
 		<section class="tsd-panel tsd-comment">
 			<div class="tsd-comment tsd-typography">
-				<dl class="tsd-comment-tags">
-					<dt>interface</dt>
-					<dd><p>IConfigService</p>
-					</dd>
-				</dl>
 			</div>
 		</section>
 		<section class="tsd-panel tsd-hierarchy">
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
 				<li>
-					<span class="target">IConfigService</span>
+					<a href="baseservice.html" class="tsd-signature-type">BaseService</a>
+					<ul class="tsd-hierarchy">
+						<li>
+							<span class="target">QuoteService</span>
+						</li>
+					</ul>
 				</li>
 			</ul>
 		</section>
@@ -2761,47 +2776,265 @@ img {
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
 					<section class="tsd-index-section ">
+						<h3>Constructors</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="quoteservice.html#constructor" class="tsd-kind-icon">constructor</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section tsd-is-inherited tsd-is-private tsd-is-private-protected">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iconfigservice.html#baseurl" class="tsd-kind-icon">base<wbr>Url</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iconfigservice.html#key" class="tsd-kind-icon">key</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iconfigservice.html#user" class="tsd-kind-icon">user</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-private"><a href="quoteservice.html#baseurl" class="tsd-kind-icon">base<wbr>Url</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-private"><a href="quoteservice.html#key" class="tsd-kind-icon">key</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-private"><a href="quoteservice.html#urlservice" class="tsd-kind-icon">url<wbr>Service</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-private"><a href="quoteservice.html#user" class="tsd-kind-icon">user</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section tsd-is-inherited tsd-is-private-protected">
+						<h3>Accessors</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="quoteservice.html#serviceurl" class="tsd-kind-icon">service<wbr>Url</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section ">
+						<h3>Methods</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="quoteservice.html#postmany" class="tsd-kind-icon">Post<wbr>Many</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="quoteservice.html#handleapierror" class="tsd-kind-icon">handle<wbr>Api<wbr>Error</a></li>
 						</ul>
 					</section>
 				</div>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Constructors</h2>
+			<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+				<a name="constructor" class="tsd-anchor"></a>
+				<h3>constructor</h3>
+				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Quote<wbr>Service<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><a href="../interfaces/iconfigservice.html" class="tsd-signature-type">IConfigService</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="quoteservice.html" class="tsd-signature-type">QuoteService</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<p>Overrides <a href="baseservice.html">BaseService</a>.<a href="baseservice.html#constructor">constructor</a></p>
+							<ul>
+								<li>Defined in <a href="https://github.com/Koban-CRM/koban-node-api-library/blob/dd17a43/src/services/quote.service.ts#L15">services/quote.service.ts:15</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Creates an instance of QuoteService.</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>memberof</dt>
+								<dd><p>QuoteService</p>
+								</dd>
+							</dl>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>config: <a href="../interfaces/iconfigservice.html" class="tsd-signature-type">IConfigService</a></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="quoteservice.html" class="tsd-signature-type">QuoteService</a></h4>
+					</li>
+				</ul>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group tsd-is-inherited tsd-is-private tsd-is-private-protected">
 			<h2>Properties</h2>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-private">
 				<a name="baseurl" class="tsd-anchor"></a>
-				<h3>base<wbr>Url</h3>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> base<wbr>Url</h3>
 				<div class="tsd-signature tsd-kind-icon">base<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
+					<p>Inherited from <a href="baseservice.html">BaseService</a>.<a href="baseservice.html#baseurl">baseUrl</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/Koban-CRM/koban-node-api-library/blob/dd17a43/src/services/base.service.ts#L9">services/base.service.ts:9</a></li>
+						<li>Defined in <a href="https://github.com/Koban-CRM/koban-node-api-library/blob/dd17a43/src/services/base.service.ts#L44">services/base.service.ts:44</a></li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<dl class="tsd-comment-tags">
+						<dt>memberof</dt>
+						<dd><p>BaseService</p>
+						</dd>
+					</dl>
+				</div>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-private">
 				<a name="key" class="tsd-anchor"></a>
-				<h3>key</h3>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> key</h3>
 				<div class="tsd-signature tsd-kind-icon">key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
+					<p>Inherited from <a href="baseservice.html">BaseService</a>.<a href="baseservice.html#key">key</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/Koban-CRM/koban-node-api-library/blob/dd17a43/src/services/base.service.ts#L11">services/base.service.ts:11</a></li>
+						<li>Defined in <a href="https://github.com/Koban-CRM/koban-node-api-library/blob/dd17a43/src/services/base.service.ts#L36">services/base.service.ts:36</a></li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<dl class="tsd-comment-tags">
+						<dt>memberof</dt>
+						<dd><p>BaseService</p>
+						</dd>
+					</dl>
+				</div>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-private">
+				<a name="urlservice" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> url<wbr>Service</h3>
+				<div class="tsd-signature tsd-kind-icon">url<wbr>Service<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<p>Inherited from <a href="baseservice.html">BaseService</a>.<a href="baseservice.html#urlservice">urlService</a></p>
+					<ul>
+						<li>Defined in <a href="https://github.com/Koban-CRM/koban-node-api-library/blob/dd17a43/src/services/base.service.ts#L52">services/base.service.ts:52</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Base Url of the Service API</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>memberof</dt>
+						<dd><p>BaseService</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-private">
 				<a name="user" class="tsd-anchor"></a>
-				<h3>user</h3>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> user</h3>
 				<div class="tsd-signature tsd-kind-icon">user<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
+					<p>Inherited from <a href="baseservice.html">BaseService</a>.<a href="baseservice.html#user">user</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/Koban-CRM/koban-node-api-library/blob/dd17a43/src/services/base.service.ts#L10">services/base.service.ts:10</a></li>
+						<li>Defined in <a href="https://github.com/Koban-CRM/koban-node-api-library/blob/dd17a43/src/services/base.service.ts#L28">services/base.service.ts:28</a></li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<dl class="tsd-comment-tags">
+						<dt>memberof</dt>
+						<dd><p>BaseService</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group tsd-is-inherited tsd-is-private-protected">
+			<h2>Accessors</h2>
+			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+				<a name="serviceurl" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagProtected">Protected</span> service<wbr>Url</h3>
+				<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> serviceUrl<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<p>Inherited from <a href="baseservice.html">BaseService</a>.<a href="baseservice.html#serviceurl">serviceUrl</a></p>
+							<ul>
+								<li>Defined in <a href="https://github.com/Koban-CRM/koban-node-api-library/blob/dd17a43/src/services/base.service.ts#L61">services/base.service.ts:61</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<dl class="tsd-comment-tags">
+								<dt>readonly</dt>
+								<dd></dd>
+								<dt>memberof</dt>
+								<dd><p>BaseService</p>
+								</dd>
+							</dl>
+						</div>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+					</li>
+				</ul>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Methods</h2>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="postmany" class="tsd-anchor"></a>
+				<h3>Post<wbr>Many</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">Post<wbr>Many<span class="tsd-signature-symbol">(</span>quotes<span class="tsd-signature-symbol">: </span><a href="kobanquote.html" class="tsd-signature-type">KobanQuote</a><span class="tsd-signature-symbol">[]</span>, uniqueproperty<span class="tsd-signature-symbol">: </span><a href="../enums/kobanquoteuniqueproperty.html" class="tsd-signature-type">KobanQuoteUniqueProperty</a>, dealuniqueproperty<span class="tsd-signature-symbol">: </span><a href="../enums/kobandealuniqueproperty.html" class="tsd-signature-type">KobanDealUniqueProperty</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Koban-CRM/koban-node-api-library/blob/dd17a43/src/services/quote.service.ts#L38">services/quote.service.ts:38</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Crée ou modifie un ensemble de devis.
+									Si un devis correspondant à la clé uniqueproperty existe, alors l&#39;API met à jour l&#39;action.
+								Sinon l&#39;API effectue une création.</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>memberof</dt>
+								<dd><p>QuoteService</p>
+								</dd>
+							</dl>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>quotes: <a href="kobanquote.html" class="tsd-signature-type">KobanQuote</a><span class="tsd-signature-symbol">[]</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Liste des devis en tableau</p>
+								</div>
+							</li>
+							<li>
+								<h5>uniqueproperty: <a href="../enums/kobanquoteuniqueproperty.html" class="tsd-signature-type">KobanQuoteUniqueProperty</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Propriété sélectionnée pour vérifier si le devis doit être créé ou modifié.
+										L&#39;API vérifie qu&#39;un devis correspondant à cette clé existe.
+									Si elle existe, L&#39;api effectue une modification, sinon il effectue une création</p>
+								</div>
+							</li>
+							<li>
+								<h5>dealuniqueproperty: <a href="../enums/kobandealuniqueproperty.html" class="tsd-signature-type">KobanDealUniqueProperty</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Propriété définissant la clé du devis associé à l&#39;opportunité.</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+				<a name="handleapierror" class="tsd-anchor"></a>
+				<h3>handle<wbr>Api<wbr>Error</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<li class="tsd-signature tsd-kind-icon">handle<wbr>Api<wbr>Error<span class="tsd-signature-symbol">(</span>payload<span class="tsd-signature-symbol">: </span><a href="kobanapiresponse.html" class="tsd-signature-type">KobanAPIResponse</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<p>Inherited from <a href="baseservice.html">BaseService</a>.<a href="baseservice.html#handleapierror">handleApiError</a></p>
+							<ul>
+								<li>Defined in <a href="https://github.com/Koban-CRM/koban-node-api-library/blob/dd17a43/src/services/base.service.ts#L83">services/base.service.ts:83</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<dl class="tsd-comment-tags">
+								<dt>memberof</dt>
+								<dd><p>BaseService</p>
+								</dd>
+							</dl>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>payload: <a href="kobanapiresponse.html" class="tsd-signature-type">KobanAPIResponse</a></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Error</span></h4>
+					</li>
+				</ul>
 			</section>
 		</section>
 		<footer class="with-border-bottom">
