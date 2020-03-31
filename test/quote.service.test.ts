@@ -1,7 +1,6 @@
 import {
   KobanSDK,
   KobanQuote,
-  KobanActionUniqueProperty,
   KobanQuoteUniqueProperty,
   KobanDealUniqueProperty
 } from '../src/koban-api-library'
