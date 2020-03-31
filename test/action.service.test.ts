@@ -62,7 +62,7 @@ describe('Action Service', () => {
     )
   })
 
-  it('should throw error if more than 100 invoices send to api', async () => {
+  it('should throw error if more than 100 actions send to api', async () => {
     for (let i = 1; i <= 100; i++) {
       actions.push(new KobanAction())
     }
