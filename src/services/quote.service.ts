@@ -3,7 +3,7 @@ import {
   KobanAPIResponse,
   KobanQuote,
   KobanDealUniqueProperty,
-  KobanQuoteUniqueProperty
+  KobanQuoteUniqueProperty,
 } from '../models'
 import { BaseService, IConfigService } from './base.service'
 
@@ -35,7 +35,7 @@ class QuoteService extends BaseService {
    * @returns {Promise<string[]>}
    * @memberof QuoteService
    */
-  public async PostMany(
+  public async postMany(
     quotes: KobanQuote[],
     uniqueproperty: KobanQuoteUniqueProperty,
     dealuniqueproperty: KobanDealUniqueProperty
@@ -51,12 +51,12 @@ class QuoteService extends BaseService {
           headers: {
             Accept: 'application/json',
             'X-ncApi': this.key,
-            'X-ncUser': this.user
+            'X-ncUser': this.user,
           },
           params: {
             uniqueproperty,
-            dealuniqueproperty
-          }
+            dealuniqueproperty,
+          },
         })
         const responseData: KobanAPIResponse = new KobanAPIResponse(request.data)
         if (!responseData.Success) {

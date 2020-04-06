@@ -13,7 +13,7 @@ enum KobanInvoiceStatus {
   /** Soldé */
   CLOSED = 'CLOSED',
   /** En litige */
-  INPROBLEM = 'INPROBLEM'
+  INPROBLEM = 'INPROBLEM',
 }
 
 /**
@@ -23,7 +23,7 @@ enum KobanInvoiceStatus {
  */
 enum KobanInvoiceUniqueProperty {
   /** Numéro */
-  Number = 'Number'
+  Number = 'Number',
 }
 
 /**
@@ -35,7 +35,7 @@ enum KobanOrderUniqueProperty {
   /** Numéro */
   Number = 'Number',
   /** Code externe */
-  Extcode = 'Extcode'
+  Extcode = 'Extcode',
 }
 
 /**
@@ -45,7 +45,7 @@ enum KobanOrderUniqueProperty {
  */
 enum KobanPaymentUniqueProperty {
   /** Code externe */
-  Extcode = 'Extcode'
+  Extcode = 'Extcode',
 }
 
 /**
@@ -57,7 +57,7 @@ enum KobanDealUniqueProperty {
   /** Identifiant Koban */
   Guid = 'Guid',
   /** Code externe */
-  Extcode = 'Extcode'
+  Extcode = 'Extcode',
 }
 
 /**
@@ -91,7 +91,7 @@ enum KobanThirdUniqueProperty {
   /** Identifiant et si il n'existe pas Code externe et si il n'existe pas EMail */
   GuidThenExtcodeThenEMail = 'GuidThenExtcodeThenEMail',
   /** Autre Code et si il n'existe pas Email et si il n'existe pas Nom et code postal */
-  OtherCodeThenEMailThenNameAddress = 'OtherCodeThenEMailThenNameAddress'
+  OtherCodeThenEMailThenNameAddress = 'OtherCodeThenEMailThenNameAddress',
 }
 
 /**
@@ -101,7 +101,7 @@ enum KobanThirdUniqueProperty {
  */
 enum KobanProductCategoryUniqueProperty {
   /** Reference */
-  Reference = 'Reference'
+  Reference = 'Reference',
 }
 
 /**
@@ -115,7 +115,7 @@ enum KobanProductUniqueProperty {
   /** Identifiant */
   Guid = 'Guid',
   /** Autre Code */
-  OtherCode = 'OtherCode'
+  OtherCode = 'OtherCode',
 }
 
 /**
@@ -127,7 +127,7 @@ enum KobanActionUniqueProperty {
   /** Guid */
   Guid = 'Guid',
   /** Code externe */
-  Extcode = 'Extcode'
+  Extcode = 'Extcode',
 }
 
 /**
@@ -137,7 +137,9 @@ enum KobanActionUniqueProperty {
  */
 enum KobanQuoteUniqueProperty {
   /** Numéro */
-  Number = 'Number'
+  Number = 'Number',
+  /** Code externe */
+  Extcode = 'Extcode',
 }
 
 export {
@@ -150,5 +152,5 @@ export {
   KobanProductUniqueProperty,
   KobanThirdUniqueProperty,
   KobanActionUniqueProperty,
-  KobanQuoteUniqueProperty
+  KobanQuoteUniqueProperty,
 }

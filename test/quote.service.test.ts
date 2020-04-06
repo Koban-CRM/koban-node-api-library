@@ -2,7 +2,7 @@ import {
   KobanSDK,
   KobanQuote,
   KobanQuoteUniqueProperty,
-  KobanDealUniqueProperty
+  KobanDealUniqueProperty,
 } from '../src/koban-api-library'
 import axios from 'axios'
 import {} from '../src/models'
@@ -22,7 +22,7 @@ describe('Quote Service', () => {
   beforeEach(() => {
     kobanSDK = new KobanSDK({
       token: '',
-      user: ''
+      user: '',
     })
     quote = new KobanQuote({})
     quotes = []
@@ -38,7 +38,7 @@ describe('Quote Service', () => {
       quotes.push(new KobanQuote())
     }
     await expect(
-      kobanSDK.quoteService.PostMany(
+      kobanSDK.quoteService.postMany(
         quotes,
         KobanQuoteUniqueProperty.Number,
         KobanDealUniqueProperty.Extcode
@@ -55,13 +55,13 @@ describe('Quote Service', () => {
     const resp = {
       data: {
         Success: true,
-        Result: ['abcd']
-      }
+        Result: ['abcd'],
+      },
     }
     mockedAxios.post.mockResolvedValue(resp)
 
     // work
-    const result = await kobanSDK.quoteService.PostMany(
+    const result = await kobanSDK.quoteService.postMany(
       [quote],
       KobanQuoteUniqueProperty.Number,
       KobanDealUniqueProperty.Extcode
@@ -87,14 +87,14 @@ describe('Quote Service', () => {
     const resp = {
       data: {
         Success: false,
-        Errors: ['test error 1', 'test error 2']
-      }
+        Errors: ['test error 1', 'test error 2'],
+      },
     }
     mockedAxios.post.mockResolvedValue(resp)
 
     // work
     await expect(
-      kobanSDK.quoteService.PostMany(
+      kobanSDK.quoteService.postMany(
         [quote],
         KobanQuoteUniqueProperty.Number,
         KobanDealUniqueProperty.Extcode

@@ -3,7 +3,7 @@ import {
   KobanAPIResponse,
   KobanResultList,
   KobanAction,
-  KobanActionUniqueProperty
+  KobanActionUniqueProperty,
 } from '../models'
 import { BaseService, IConfigService } from './base.service'
 
@@ -29,15 +29,15 @@ class ActionService extends BaseService {
    * @returns {Promise<KobanAction>}
    * @memberof ActionService
    */
-  public async PostOne(action: KobanAction): Promise<KobanAction> {
+  public async postOne(action: KobanAction): Promise<KobanAction> {
     return new Promise<KobanAction>(async (resolve, reject) => {
       try {
         const request = await axios.post(`${this.serviceUrl}`, action, {
           headers: {
             Accept: 'application/json',
             'X-ncApi': this.key,
-            'X-ncUser': this.user
-          }
+            'X-ncUser': this.user,
+          },
         })
         const responseData: KobanAction = new KobanAction(request.data)
         resolve(responseData)
@@ -59,7 +59,7 @@ class ActionService extends BaseService {
    * @returns {Promise<string[]>}
    * @memberof ActionService
    */
-  public async PostMany(
+  public async postMany(
     actions: KobanAction[],
     uniqueproperty: KobanActionUniqueProperty
   ): Promise<string[]> {
@@ -74,11 +74,11 @@ class ActionService extends BaseService {
           headers: {
             Accept: 'application/json',
             'X-ncApi': this.key,
-            'X-ncUser': this.user
+            'X-ncUser': this.user,
           },
           params: {
-            uniqueproperty
-          }
+            uniqueproperty,
+          },
         })
         const responseData: KobanAPIResponse = new KobanAPIResponse(request.data)
         if (!responseData.Success) {
