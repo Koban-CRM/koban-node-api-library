@@ -24,15 +24,15 @@ class TagService extends BaseService {
    * @returns {Promise<KobanAPIResponse>}
    * @memberof TagService
    */
-  public async PostAddToCategory(tag: KobanTag): Promise<KobanAPIResponse> {
+  public async postAddToCategory(tag: KobanTag): Promise<KobanAPIResponse> {
     return new Promise<KobanAPIResponse>(async (resolve, reject) => {
       try {
         const request = await axios.post(`${this.serviceUrl}/PostAddToCategory`, tag, {
           headers: {
             Accept: 'application/json',
             'X-ncApi': this.key,
-            'X-ncUser': this.user
-          }
+            'X-ncUser': this.user,
+          },
         })
         const responseData: KobanAPIResponse = new KobanAPIResponse(request.data)
         if (!responseData.Success) {

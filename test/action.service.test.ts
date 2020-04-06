@@ -16,7 +16,7 @@ describe('Action Service', () => {
   beforeEach(() => {
     kobanSDK = new KobanSDK({
       token: '',
-      user: ''
+      user: '',
     })
     action = new KobanAction({})
     actions = []
@@ -30,12 +30,12 @@ describe('Action Service', () => {
   it('should succeed on PostOne', async () => {
     // setup
     const resp = {
-      data: new KobanAction()
+      data: new KobanAction(),
     }
     mockedAxios.post.mockResolvedValue(resp)
 
     // work
-    const result = await kobanSDK.actionService.PostOne(action)
+    const result = await kobanSDK.actionService.postOne(action)
 
     // expect
     expect(result).toBeInstanceOf(KobanAction)
@@ -57,7 +57,7 @@ describe('Action Service', () => {
     mockedAxios.post.mockRejectedValue(new Error('Network error: Something went wrong'))
 
     // work
-    await expect(kobanSDK.actionService.PostOne(new KobanAction())).rejects.toThrow(
+    await expect(kobanSDK.actionService.postOne(new KobanAction())).rejects.toThrow(
       new Error('Network error: Something went wrong')
     )
   })
@@ -67,7 +67,7 @@ describe('Action Service', () => {
       actions.push(new KobanAction())
     }
     await expect(
-      kobanSDK.actionService.PostMany(actions, KobanActionUniqueProperty.Guid)
+      kobanSDK.actionService.postMany(actions, KobanActionUniqueProperty.Guid)
     ).rejects.toThrow(
       new Error(
         `You are trying to send 101 actions but only a maximum of 100 is accepted per api call.`
@@ -80,13 +80,13 @@ describe('Action Service', () => {
     const resp = {
       data: {
         Success: true,
-        Result: ['abcd']
-      }
+        Result: ['abcd'],
+      },
     }
     mockedAxios.post.mockResolvedValue(resp)
 
     // work
-    const result = await kobanSDK.actionService.PostMany([action], KobanActionUniqueProperty.Guid)
+    const result = await kobanSDK.actionService.postMany([action], KobanActionUniqueProperty.Guid)
 
     // expect
     expect(result).toBeInstanceOf(Array)
@@ -108,14 +108,14 @@ describe('Action Service', () => {
     const resp = {
       data: {
         Success: false,
-        Errors: ['test error 1', 'test error 2']
-      }
+        Errors: ['test error 1', 'test error 2'],
+      },
     }
     mockedAxios.post.mockResolvedValue(resp)
 
     // work
     await expect(
-      kobanSDK.actionService.PostMany([action], KobanActionUniqueProperty.Guid)
+      kobanSDK.actionService.postMany([action], KobanActionUniqueProperty.Guid)
     ).rejects.toThrow(new Error(resp.data.Errors.join('\n')))
   })
 })

@@ -2,7 +2,7 @@ import {
   KobanSDK,
   KobanDeal,
   KobanDealUniqueProperty,
-  KobanThirdUniqueProperty
+  KobanThirdUniqueProperty,
 } from '../src/koban-api-library'
 import axios from 'axios'
 import {} from '../src/models'
@@ -22,7 +22,7 @@ describe('Deal Service', () => {
   beforeEach(() => {
     kobanSDK = new KobanSDK({
       token: '',
-      user: ''
+      user: '',
     })
     deal = new KobanDeal({})
     deals = []
@@ -38,7 +38,7 @@ describe('Deal Service', () => {
       deals.push(new KobanDeal())
     }
     await expect(
-      kobanSDK.dealService.PostMany(
+      kobanSDK.dealService.postMany(
         deals,
         KobanDealUniqueProperty.Extcode,
         KobanThirdUniqueProperty.Extcode
@@ -55,13 +55,13 @@ describe('Deal Service', () => {
     const resp = {
       data: {
         Success: true,
-        Result: ['abcd']
-      }
+        Result: ['abcd'],
+      },
     }
     mockedAxios.post.mockResolvedValue(resp)
 
     // work
-    const result = await kobanSDK.dealService.PostMany(
+    const result = await kobanSDK.dealService.postMany(
       [deal],
       KobanDealUniqueProperty.Extcode,
       KobanThirdUniqueProperty.Extcode
@@ -87,14 +87,14 @@ describe('Deal Service', () => {
     const resp = {
       data: {
         Success: false,
-        Errors: ['test error 1', 'test error 2']
-      }
+        Errors: ['test error 1', 'test error 2'],
+      },
     }
     mockedAxios.post.mockResolvedValue(resp)
 
     // work
     await expect(
-      kobanSDK.dealService.PostMany(
+      kobanSDK.dealService.postMany(
         [deal],
         KobanDealUniqueProperty.Extcode,
         KobanThirdUniqueProperty.Extcode

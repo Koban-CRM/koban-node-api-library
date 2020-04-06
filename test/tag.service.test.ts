@@ -15,14 +15,14 @@ describe('Tag Service', () => {
   beforeEach(() => {
     kobanSDK = new KobanSDK({
       token: '',
-      user: ''
+      user: '',
     })
     tag = new KobanTag({
       Guid: 'test',
       ExternalCode: 'test',
       Label: 'test',
       TagCategory: 'test',
-      TagCategoryCode: 'test'
+      TagCategoryCode: 'test',
     })
   })
 
@@ -35,13 +35,13 @@ describe('Tag Service', () => {
     const resp = {
       data: {
         Result: 'test',
-        Success: true
-      }
+        Success: true,
+      },
     }
     mockedAxios.post.mockResolvedValue(resp)
 
     // work
-    const result = await kobanSDK.tagService.PostAddToCategory(tag)
+    const result = await kobanSDK.tagService.postAddToCategory(tag)
 
     // expect
     expect(result).toBeInstanceOf(KobanAPIResponse)
@@ -63,14 +63,14 @@ describe('Tag Service', () => {
     const resp = {
       data: {
         Errors: ['test'],
-        Success: false
-      }
+        Success: false,
+      },
     }
     mockedAxios.post.mockResolvedValue(resp)
     // mockedAxios.post.mockRejectedValue(new Error('Network error: Something went wrong'))
 
     // work
-    await expect(kobanSDK.tagService.PostAddToCategory(new KobanTag())).rejects.toThrow(
+    await expect(kobanSDK.tagService.postAddToCategory(new KobanTag())).rejects.toThrow(
       new Error(resp.data.Errors.join('\n'))
     )
   })
@@ -80,7 +80,7 @@ describe('Tag Service', () => {
     mockedAxios.post.mockRejectedValue(new Error('Network error: Something went wrong'))
 
     // work
-    await expect(kobanSDK.tagService.PostAddToCategory(new KobanTag())).rejects.toThrow(
+    await expect(kobanSDK.tagService.postAddToCategory(new KobanTag())).rejects.toThrow(
       new Error('Network error: Something went wrong')
     )
   })
