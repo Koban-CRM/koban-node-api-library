@@ -9,7 +9,7 @@ import {
   KobanEShopOrder,
   KobanEShopTrackingOrder,
   IOrderGetByDate,
-  KobanResultList
+  KobanResultList,
 } from '../models'
 import { BaseService, IConfigService } from './base.service'
 
@@ -59,13 +59,13 @@ class OrderService extends BaseService {
           headers: {
             Accept: 'application/json',
             'X-ncApi': this.key,
-            'X-ncUser': this.user
+            'X-ncUser': this.user,
           },
           params: {
             dealuniqueproperty,
             thirduniqueproperty,
-            uniqueproperty
-          }
+            uniqueproperty,
+          },
         })
         const responseData: KobanAPIResponse = new KobanAPIResponse(request.data)
         if (!responseData.Success) {
@@ -96,11 +96,11 @@ class OrderService extends BaseService {
           headers: {
             Accept: 'application/json',
             'X-ncApi': this.key,
-            'X-ncUser': this.user
+            'X-ncUser': this.user,
           },
           params: {
-            uniqueproperty
-          }
+            uniqueproperty,
+          },
         })
         const responseData: KobanAPIResponse = new KobanAPIResponse(request.data)
         if (!responseData.Success) {
@@ -131,11 +131,11 @@ class OrderService extends BaseService {
           headers: {
             Accept: 'application/json',
             'X-ncApi': this.key,
-            'X-ncUser': this.user
+            'X-ncUser': this.user,
           },
           params: {
-            uniqueproperty
-          }
+            uniqueproperty,
+          },
         })
         const responseData: KobanAPIResponse = new KobanAPIResponse(request.data)
         if (!responseData.Success) {
@@ -154,13 +154,15 @@ class OrderService extends BaseService {
    * @param {KobanEShopOrder} eShopOrder
    * @param {KobanOrderUniqueProperty} uniqueproperty
    * @param {KobanThirdUniqueProperty} thirduniqueproperty
+   * @param {KobanDealUniqueProperty} [dealuniqueproperty]
    * @returns {Promise<string>}
    * @memberof OrderService
    */
   public async postOneFromeShop(
     eShopOrder: KobanEShopOrder,
     uniqueproperty: KobanOrderUniqueProperty,
-    thirduniqueproperty: KobanThirdUniqueProperty
+    thirduniqueproperty: KobanThirdUniqueProperty,
+    dealuniqueproperty?: KobanDealUniqueProperty
   ): Promise<string> {
     return new Promise<string>(async (resolve, reject) => {
       try {
@@ -168,12 +170,13 @@ class OrderService extends BaseService {
           headers: {
             Accept: 'application/json',
             'X-ncApi': this.key,
-            'X-ncUser': this.user
+            'X-ncUser': this.user,
           },
           params: {
             uniqueproperty,
-            thirduniqueproperty
-          }
+            thirduniqueproperty,
+            dealuniqueproperty,
+          },
         })
         const responseData: KobanAPIResponse = new KobanAPIResponse(request.data)
         if (!responseData.Success) {
@@ -207,11 +210,11 @@ class OrderService extends BaseService {
             headers: {
               Accept: 'application/json',
               'X-ncApi': this.key,
-              'X-ncUser': this.user
+              'X-ncUser': this.user,
             },
             params: {
-              uniqueproperty
-            }
+              uniqueproperty,
+            },
           }
         )
         const responseData: KobanAPIResponse = new KobanAPIResponse(request.data)
@@ -241,7 +244,7 @@ class OrderService extends BaseService {
       length: 20,
       start: 0,
       from: new Date(),
-      to: new Date()
+      to: new Date(),
     }
   ): Promise<KobanResultList<KobanOrder>> {
     return new Promise<KobanResultList<KobanOrder>>(async (resolve, reject) => {
@@ -250,14 +253,14 @@ class OrderService extends BaseService {
           headers: {
             Accept: 'application/json',
             'X-ncApi': this.key,
-            'X-ncUser': this.user
+            'X-ncUser': this.user,
           },
           params: {
             st: start,
             s: length,
             from: Math.round(from.getTime() / 1000).toString(),
-            to: Math.round(to.getTime() / 1000).toString()
-          }
+            to: Math.round(to.getTime() / 1000).toString(),
+          },
         })
         const responseData: KobanResultList<KobanOrder> = new KobanResultList<KobanOrder>(
           request.data,
@@ -286,7 +289,7 @@ class OrderService extends BaseService {
       length: 20,
       start: 0,
       updated: new Date(),
-      fill: false
+      fill: false,
     }
   ): Promise<KobanResultList<KobanOrder>> {
     return new Promise<KobanResultList<KobanOrder>>(async (resolve, reject) => {
@@ -295,14 +298,14 @@ class OrderService extends BaseService {
           headers: {
             Accept: 'application/json',
             'X-ncApi': this.key,
-            'X-ncUser': this.user
+            'X-ncUser': this.user,
           },
           params: {
             updated: Math.round(updated.getTime() / 1000).toString(),
             l: length,
             s: start,
-            f: fill === true ? '1' : '0'
-          }
+            f: fill === true ? '1' : '0',
+          },
         })
         const responseData: KobanResultList<KobanOrder> = new KobanResultList<KobanOrder>(
           request.data,
